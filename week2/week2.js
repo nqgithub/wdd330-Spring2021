@@ -1,35 +1,27 @@
-let firstname = "Nick";
-let lastname = "Quast" 
-let iNumber = "1122334455";
+let addButton = document.querySelector('#add');
+let sumButton = document.querySelector('#sum');
+let displayDiv = document.querySelector('#display');
 
+/***********************************************
+* Get sum of integers from 1 to n
+***********************************************/
+sumButton.addEventListener("click", () => {
+  let num = document.querySelector('#input');
+  let sum = 0;
+  
+  for (let i = 1; i <= num.value; i++) {
+    sum += i;
+  }
 
-let student 1= {
-    firstName: 'Nick'
-    lastNaem: 'Quast'
-    iNumber: '1122334455'
-}
+  displayDiv.innerHTML = sum;
+});
 
-let student 2= {
-    firstName: 'Tim'
-    lastNaem: 'Thanyn'
-    iNumber: '1122334455'
-}
+/***********************************************
+* Add two numbers
+***********************************************/
+addButton.addEventListener("click", () => {
+  let num1 = Number(document.querySelector('#input').value);
+  let num2 = Number(document.querySelector('#input-two').value);
 
-
-
-let students = localStorage.getItem("students");
-
-students.push(student1);
-students.push(student2);
-
-
-localStorage.setItem("students", JASON.stringify(students));
-
-
-//function declaration (hoisted)
-function log(variableName) {
-    console.log(variableName);
-}
-
-log(firstName);
-
+  displayDiv.innerHTML = num1 + num2;
+});
