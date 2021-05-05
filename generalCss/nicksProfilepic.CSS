@@ -1,0 +1,13 @@
+/* Resize the Profile picture */
+img {
+    width: 250px;
+    
+}
+
+body {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
