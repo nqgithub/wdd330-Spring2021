@@ -1,0 +1,27 @@
+.wrapper{
+display: grid;
+grid-template: 40px 40px 40px / 40px 40px 40px ;
+}
+
+.wrapper div{
+justify-content: center;
+display: flex;
+align-items: center;
+}
+
+.wrapper div:nth-child(3n+1), .wrapper div:nth-child(3n+2){
+    border-right: 1px solid black;
+
+}
+
+.wrapper div:nth-child(1),
+.wrapper div:nth-child(2),
+.wrapper div:nth-child(3),
+.wrapper div:nth-child(4),
+.wrapper div:nth-child(5),
+.wrapper div:nth-child(6){
+    border-bottom: 1px solid black;
+
+}
+
+

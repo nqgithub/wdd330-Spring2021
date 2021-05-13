@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Week 04</h1>
+  <h2>Notes</h2>
+  <p>From the book: Javascript Novice to Ninja 2nd eddition by Darren Jones</p>
+
+
+  <h3>Chapter 8, 12, 15</h3>
+
+  <h4>Forms</h4>
+  <ul>
+    <li> Forms are made up of a "form" element that contains form controls such
+      as input fields, select menus and buttons. These input fields can be
+      populated with information that is processed once the form has been
+      submitted. </li>
+    <br>
+
+    <ul>Code</ul>
+
+    <p>------------- searchingExample-1 --------------</p>
+
+    <br>
+
+    <ul>A searching example</ul>
+    <form name='search' action='/search'>
+      <input name='searchInput'>
+      <button type='submit'>Search</button>
+    </form>
+    <script src='/week4/main.js'></script>
+
+  </ul>
+
+  <br>
+
+  <h4>Accessing Form Elements</h4>
+  <ul>
+    <li> A form object has a method called elements that returns
+      an HTML collection of all the elements contained in the form. </li>
+    <li> The square bracket notation is useful if there are any naming clashes
+      with existing property and method names, or if the name is an invalid
+      variable name. </li>
+  </ul>
+
+  <br>
+
+  <h4>Form Properties and Methods</h4>
+  <ul>
+    <li> Form objects have a many useful properties and methods that can be
+      used to interact with the form. </li>
+    <li> The "form.submit()" method will submit the form automatically.
+      Note that submitting a form using this method won’t trigger the form
+      submit event. </li>
+    <li>Submit the form automatically= use "form.submit()"</li>
+    <li>Reset all the form controls back to their initial values
+      specified in the HTML. = "button type='reset'>Reset/'button' </li>
+
+    <ul>Example:</ul>
+    <ul><button type='reset'>Reset</button></ul>
+
+    <br>
+
+    <li> Reset buttons are generally considered poor for usability,
+      as they are too easy to click and then wipe out all the data that’s
+      been entered. So think very carefully before using one in a form. </li>
+    <li> The form.action property can be used to set the action attribute of
+      a form, so it’s sent to a different URL to be processed on the server: </li>
+    <li> To set the forms action = " form.action = '/an/other.url' "</li>
+
+  </ul>
+
+  <br>
+
+  <h4>Form Events</h4>
+  <ul>
+    <li> Forms trigger events. </li>
+    <li> Focus Element = The focus event occurs when an element is focused on. 
+      In the case of an <'input'> element, this is when the cursor is placed 
+      inside the element (either by clicking or tapping on it or navigating to 
+      it using the keyboard) </li>
+    <br>
+    <ul>Example:</ul>
+
+    <p> ------------ focusEvent-1 ---------------</p>
+
+    <br>
+
+    <li>Blur event = The blur event occurs when the user moves the focus away 
+      from the form element. </li>
+
+    <p> -------------- blurEvent-1 --------------</p>
+
+    <br>
+
+    <li>Change event = The change event occurs when the user moves the focus away from the 
+      form elementafter changing it. So if a user clicks in an input field and 
+      makes no changes, and then clicks elsewhere, the change event won’t fire, 
+      but the blur event will. </li>
+
+      <p> -------------- changeEvent-1 --------------</p>
+
+  </ul>
+
+<br>
+
+<h4>Submitting a Form</h4>
+<ul>
+  <li> To be continued... </li>
+
+</ul>
+
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h4>-------- Questions --------</h4>
+  <li> None</li>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+</body>
+
+</html>
