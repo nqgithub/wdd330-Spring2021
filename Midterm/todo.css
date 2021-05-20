@@ -80,16 +80,18 @@ ul li.checked::before {
     padding: 12px 16px 12px 16px;
 }
 
+/* What color the "X" is */
 .close:hover {
-    background-color: blue;
+    background-color:red;
     color: white;
+    text-align:end;
 }
 
 /* Style the header */
 .header {
     background-color: green;
     padding: 30px 40px;
-    color: white;
+    color: purple;
     text-align: center;
 }
 
@@ -129,4 +131,7 @@ input {
     background-color: #bbb;
 }
 
-
+/* This is to add a thin black boarder around the "Title" box */
+.addToList {
+    border: thin solid black;
+}
