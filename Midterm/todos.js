@@ -1,6 +1,10 @@
-import {Todo} from './todo.js';
+import {
+    Todo
+} from './todo.js';
 
 let toDoList = [];
+
+document.querySelector('#add').addEventListener('click', addTodo);
 
 let todo1 = new Todo('Mow the lawn');
 let todo2 = new Todo('Paint the fence');
@@ -10,12 +14,16 @@ toDoList.push(todo1);
 toDoList.push(todo2);
 toDoList.push(todo3);
 
-let ul = document.querySelector('ul');
+print();
 
-toDoList.forEach(
-    todoItem => {
-        ul.innerHTML += 
-            `<li>
+function print() {
+    let ul = document.querySelector('ul');
+    ul.innerHTML = '';
+
+    toDoList.forEach(
+        todoItem => {
+            ul.innerHTML +=
+                `<li>
 
             <input type="checkbox">
             <span>${ todoItem.Content }</span>
@@ -23,4 +31,14 @@ toDoList.forEach(
             </li>`;
 
         }
-);
+    );
+}
+
+function addTodo() {
+    let todoText = document.querySelector('#myInput').value;
+    let newTodoItem = new Todo(todoText);
+    toDoList.push(newTodoItem);
+
+    print();
+
+}
