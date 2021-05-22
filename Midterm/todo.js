@@ -7,7 +7,10 @@ export class Todo {
 }
 
 
-
+// let toDo = new Todo()
+// let f150 = new Ford ()
+// let myTruck = new f150()
+// myTruck.start()
 
 
 
