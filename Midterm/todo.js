@@ -1,3 +1,9 @@
+// Name of the guts "(content)" 
+// Guts "this.Id = Date.now();    "
+//                 this.Content = content;
+//                 this.Completed = false;"
+
+
 export class Todo {
     constructor(content) {
         this.Id = Date.now();
@@ -5,6 +11,10 @@ export class Todo {
         this.Completed = false;
     }
 }
+
+
+
+
 
 
 // let toDo = new Todo()

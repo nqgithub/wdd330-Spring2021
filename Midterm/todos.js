@@ -6,19 +6,12 @@ import {
 
 document.querySelector('#add').addEventListener('click', addTodo);
 
-let todo1 = new Todo('Mow the lawn');
-let todo2 = new Todo('Paint the fence');
-let todo3 = new Todo('Walk the dog');
-
-// toDoList.push(todo1);
-// toDoList.push(todo2);
-// toDoList.push(todo3);
 
 print();
 
 function print() {
-    let ul = document.querySelector('ul');
-    ul.innerHTML = ''
+    let table = document.querySelector('table');
+    table.innerHTML = ''
 
     let toDoList = JSON.parse(localStorage.getItem("name"));
     if (toDoList == undefined) {
@@ -27,17 +20,23 @@ function print() {
     }
     toDoList.forEach(
         todoItem => {
-            ul.innerHTML +=
-                `<li>
-
-            <input type="checkbox">
-            <span>${ todoItem.Content }</span>
-            <button>X</button>
-            </li>`;
+            table.innerHTML +=
+            
+                `<tr>
+            <td class="${todoItem} checkbox" > <input type="checkbox"> </td>
+            <td class="${todoItem} content" > <span>${ todoItem.Content }</span> </td>
+            <td class="${todoItem} delete" > <button>X</button> </td>
+            
+            </tr>`;
 
         }
     );
 }
+
+
+addEventListenersToDeleteButtons();
+
+
 
 function addTodo() {
     let todoText = document.querySelector('#myInput').value;
@@ -59,18 +58,21 @@ function addTodo() {
 
 }
 
-function removeTodo() {
+function removeTodo(button) {
     let toDoList = JSON.parse(localStorage.getItem("name"));
-    document.querySelectorAll
 
 }
 
+
+//Add event listeners to delete items
 function addEventListenersToDeleteButtons() {
-    let eventListeners = document.querySelectorAll("button");
-    eventListeners.forEach(function (element) {
-        console.log(element)
-        element.addEventListener("click", function (event) {
-                removeTodo(event.target)
+    let arrayOfDeleteButtons = document.querySelectorAll("button");
+
+    arrayOfDeleteButtons.forEach(function (button) {
+        console.log(button)
+        button.addEventListener("touchend", function (event) {
+                removeTodo(event.target);
+                print();
             }
 
         )
@@ -78,9 +80,21 @@ function addEventListenersToDeleteButtons() {
 
 }
 
+
+
+
+//create function adds the listeners to the deleted buttons
+// forech loop on the node list
+//define listener to call remove todo item functions
+
+
+//Get the ID of the Node (Button ellement/ remove to do "button.parrentnode.classlist[0]")
+//Use a foreach to match the ID from the node to match to the object. Then splice it from the array
+//Set the new array to local storage.
+
+
 // Add a parameter to the removeTodo function
 // Remove the item from loacal storage -- 
 // Every item and content needs to have an ID in local storage
 // Delete the idem and rown in local storage 
 // Call print function
-// 
