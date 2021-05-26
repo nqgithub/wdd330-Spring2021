@@ -11,478 +11,452 @@
 
 <body>
   <h1>Week 02</h1>
+
+  <ul> <a href="/index.html">Home Page</a> </ul>
+
   <h2>Notes</h2>
   <p>From the book: Javascript Novice to Ninja 2nd eddition by Darren Jones</p>
 
-  <ul> 
+  <ul>
     <li>Variables are used in programming languages to refer to a value stored in memory.</li>
     <li>1234</li>
     <li>12345</li>
   </ul>
-  
+
 
 
   <h3>Chapter 2</h3>
   <h4>Variables</h4>
-  
-  <p> - Variables have to be declared before they can be used. From ES6 onwards, JavaScript uses 
-      the keywords const and let to declare variables. The keyword const is used when the variable 
-      will not be reassigned to another value, whereas let is used if the variable might be 
-      reassigned later in the program. </p>
+
+  <p> - Variables have to be declared before they can be used. From ES6 onwards, JavaScript uses
+    the keywords const and let to declare variables. The keyword const is used when the variable
+    will not be reassigned to another value, whereas let is used if the variable might be
+    reassigned later in the program. </p>
   <p> - To assign a value to a constant or variable, we use the = operator. </p>
   <p> Example: const name = 'Alexa'; // This won't be assigned to another string </p>
-  <p> -  This example shows how we would declare the variable score and assign it a value of the number literal 0 :</p>
+  <p> - This example shows how we would declare the variable score and assign it a value of the number literal 0 :</p>
   <p> Example: let score = 0; // This value may change during the program</p>
   <p> - To see the value of a variable, simply enter it in the console and press enter. </p>
   <p> Example: name
-    << 'Alexa'</p>
-  <p> - You can even declare and assign multiple variables at the same time if you separate them with commas: </p>
+    << 'Alexa' </p> <p> - You can even declare and assign multiple variables at the same time if you separate them with
+      commas: </p>
   <p> Example: let x = 3, y = 4, z = 5; </p>
-  <p> - Variables that have been declared using the let keyword can be reassigned to another value at some 
+  <p> - Variables that have been declared using the let keyword can be reassigned to another value at some
     point later in the program. This is done by simply putting them equal to the new value. </p>
-  <p> - In contrast, using const means you can'treassignthe variable to another value. That means that if 
-    a variable is assigned to a primitive data type, then the value can't be changed, and will result in an error if you attempt to </p>
+  <p> - In contrast, using const means you can'treassignthe variable to another value. That means that if
+    a variable is assigned to a primitive data type, then the value can't be changed, and will result in an error if you
+    attempt to </p>
   <p> Example: const name = 'Alexa';
-                  name = 'Siri';
-                  << TypeError: Assignment to constant variable. </p>
-  <p> - Using const prevents you from reassigning a variable to another object, as it will produce an error </p>
-  <p> - You should try to use const to declare most variables. This helps to avoid any bugs caused by unexpected changes in assignment. </p>
-  <p> .  </p>
-  <p> .  </p>
-  
+    name = 'Siri';
+    << TypeError: Assignment to constant variable. </p> <p> - Using const prevents you from reassigning a variable to
+      another object, as it will produce an error </p>
+  <p> - You should try to use const to declare most variables. This helps to avoid any bugs caused by unexpected changes
+    in assignment. </p>
+  <p> . </p>
+  <p> . </p>
+
 
 
   <h4>Scope</h4>
   <p> - Const and let are only in a block scope. Or in other words a local scope </p>
-  <p> - Scope is an important concept in programming. It refers to where a constant or variable is accessible by the program. 
+  <p> - Scope is an important concept in programming. It refers to where a constant or variable is accessible by the
+    program.
     There are two common scopes that are often referred to in programs: global scope and local scope. </p>
-  <p> .  </p>
-  <p> .  </p>
+  <p> . </p>
+  <p> . </p>
 
-    <h5> Global Scope </h5>
-        <p>Any variable declared outside of a block is said to have global scope. This means it is accessible 
-           everywhere in the program. While this may seem to be a good idea at first, it is not considered good practice. 
-           A ninja programmer will try to keep the number of global variables to a minimum, because any variables that 
-           share the same name will clash and potentially overwrite each other’s values. It might seem unlikely that this 
-           would happen, but it is all too common in large programs when you forget which variables you have used. 
-           There are also conventions where the same variable name is used in different situations. It can also be a problem 
-           when you are writing code in teams, or if you’re using code libraries that may use the same variable names as some of 
-           your own code. </p>
-  
-     <p> PROS </p>
-        <p> - Easily accessable</p>
-        
-     <p> CONS  </p>
-        <p> - Variables are accessable everywhere. This can cause problems with other functions your trying to run. </p>
-        <p> - Any variables that share the same name will clash and potentially overwrite each other’s values. </p>
-        <p> - The same variable name is used in different situations. </p>
-        <p> - It can also be a problem when you are writing code in teams, or if you’re using code libraries that 
-              may use the same variable names as some of your own code. </p>
- <p> .  </p>
- <p> .  </p>
- 
+  <h5> Global Scope </h5>
+  <p>Any variable declared outside of a block is said to have global scope. This means it is accessible
+    everywhere in the program. While this may seem to be a good idea at first, it is not considered good practice.
+    A ninja programmer will try to keep the number of global variables to a minimum, because any variables that
+    share the same name will clash and potentially overwrite each other’s values. It might seem unlikely that this
+    would happen, but it is all too common in large programs when you forget which variables you have used.
+    There are also conventions where the same variable name is used in different situations. It can also be a problem
+    when you are writing code in teams, or if you’re using code libraries that may use the same variable names as some
+    of
+    your own code. </p>
 
-     <h5> Local Scope </h5>
-        <p> - "Let" and "Const" are within the local scope and allows you to change a variable for just within the local scope or 
-          perameters of the function. </p>
-        <p> - If the variable is changed no using "let" or "const" the they are global variables. Try to prevent global scope variables </p>
-        <p> - Only us global scope variables for specific purposes and when you need. </p>
-  
+  <p> PROS </p>
+  <p> - Easily accessable</p>
+
+  <p> CONS </p>
+  <p> - Variables are accessable everywhere. This can cause problems with other functions your trying to run. </p>
+  <p> - Any variables that share the same name will clash and potentially overwrite each other’s values. </p>
+  <p> - The same variable name is used in different situations. </p>
+  <p> - It can also be a problem when you are writing code in teams, or if you’re using code libraries that
+    may use the same variable names as some of your own code. </p>
+  <p> . </p>
+  <p> . </p>
+
+
+  <h5> Local Scope </h5>
+  <p> - "Let" and "Const" are within the local scope and allows you to change a variable for just within the local scope
+    or
+    perameters of the function. </p>
+  <p> - If the variable is changed no using "let" or "const" the they are global variables. Try to prevent global scope
+    variables </p>
+  <p> - Only us global scope variables for specific purposes and when you need. </p>
+
   <p> -In general, if a value is unlikely to change in your code then you should declare it using "const" or "let". </p>
-   <p> .  </p>
-   <p> .  </p>
+  <p> . </p>
+  <p> . </p>
 
 
 
   <h4>Converting Between Strings and Numbers</h4>
 
   <h5>Converting Numbers to Strings</h5>
-  <p> - The best way to change a string to a number is to use the Number method. This will convert the string form of a 
+  <p> - The best way to change a string to a number is to use the Number method. This will convert the string form of a
     number into an actual number: </p>
   <p> - Number('23');
-    << 23 </p>
-  <p> - This is the preferred way to convert strings to numbers as it avoids type coercion in the background. 
-    The conversion is also explicit and makes it obvious what is being done. </p>
+    << 23 </p> <p> - This is the preferred way to convert strings to numbers as it avoids type coercion in the
+      background.
+      The conversion is also explicit and makes it obvious what is being done. </p>
   <p> - If the string cannot be converted into a number, then NaN is returned:</p>
   <p>Number('hello');
-    <<< NaN</p>
-  <p> - You can however get a number from a string by multiplying or adding the string with a number. 
-    BUT this discouraged and is hackable</p>   
-  <p> - There are a few 'tricks' that can also be used to convert a string into a number that use type coercion. 
+    <<< NaN</p> <p> - You can however get a number from a string by multiplying or adding the string with a number.
+      BUT this discouraged and is hackable</p>
+  <p> - There are a few 'tricks' that can also be used to convert a string into a number that use type coercion.
     For example we can multiply a numerical string by 1 , which will coerce it into a number:
 
-   <p> const answer = '5' * 1;
-    << 5
-    typeof answer;
-    << "number" </p>
+    <p> const answer = '5' * 1;
+      << 5 typeof answer; << "number" </p> <p> Another trick is to simply place a + operator in front of it: </p>
 
-    <p> Another trick is to simply place a + operator in front of it: </p>
-    
     <p>
-    const answer = +'5';
-    << 5
-    typeof answer;
-    << 'number' </p>   
- <p> .  </p>
- <p> .  </p>
- 
-
-
-  <h5>Converting Strings to Numbers</h5>
-  
-  <p> -The preferred way of changing a number to a string is to use the String function: </p>
-  
-  <P> Example </P>
-  <p> String(3);
-  << '3' </p>
-
-   
-  <p> You can also use type coercion by 'adding' an empty string, although this isn't recommended: </p>
-  <p>Example</p>
-  <p>  3 +'';
-  << '3' </p>
-
-  <p> Another option is to use the toString() method: </p>
-  <p>Example</p>
-  <p> 10..toString();
-  << '10' </p>
-
-<p> This can also be used to change the base of the number. 
-  For example, if you want to write the number 10 in binary (base two), you could write: </p>
-  
-  <p>Example</p>
-  <p> 10..toString(2);
-  << '1010' </p>
-
-  <p> You can go up to base 36, although after base 10, letters are used to represent the digits: </p>
-  <p>Example</p>
-  <p> > 28101..toString(36) // a million in base 36
-  << 'lol' </p>
-  <p> .  </p>
-  <p> .  </p>
-  <p> .  </p>
-
-
-  <h4>Parsing Numbers</h4>
-  <p>- There is also a useful function called parseInt() that can be used to convert a string representation
-     of a numerical value back into a number. </p>
-
-   <P>ParseInt('1010',2); // converts from binary, back to decimal
-    << 10 </P>
-
-  <p> - If a string starts with a number, the parseInt function will use this number and ignore any letters that come afterwards:</p>
-
-   <p>Example: const address = '221B Baker Street';
-    parseInt(address, 10)
-    << 221 </p>
-    
-  <p> - If you use parseInt with a decimal, it will remove anything after the decimal point: </p>
-  <p> parseInt('2.4',10);
-    << 2 </p>
-  <p>Be careful not to think that this is rounding the number to the nearest integer; 
-    it simply removes the part after the decimal point.</p>
-  
-  <p> - There is also a similar function called parseFloat() that converts strings into floating point decimal numbers: </p>
-
-  <p> parseFloat('2.9',10);
-    << 2.9 </p>
-<p> .  </p>
-<p> .  </p>
-  
+      const answer = +'5';
+      << 5 typeof answer; << 'number' </p> <p> . </p>
+    <p> . </p>
 
 
 
-  <h4>Template Literals</h4>
-  <p>  Template literalsare a special types of string that were introduced in ES6. Template literals use the backtick character, ` , 
-    to deliminate 
-  the string, as shown in the example below:</p>
+    <h5>Converting Strings to Numbers</h5>
 
-  <p> Example </p>
-  <p>`Hello!`;</p>
-  
-  <p> This has the advantage of being able to use both types of quote mark within the string:</p>
-  <p> `She said, "It's Me!"` </p>
+    <p> -The preferred way of changing a number to a string is to use the String function: </p>
 
-  <p> They also allow interpolation of JavaScript code. This means that a JavaScript expression can be inserted inside a string and the 
-  result will be displayed, as can be seen in the examples below: </p>
-  
-  <P> const name = `Siri`;
-  `Hello ${ name }!`;
-  << 'Hello Siri!' </p>
+    <P> Example </P>
+    <p> String(3);
+      << '3' </p> <p> You can also use type coercion by 'adding' an empty string, although this isn't recommended: </p>
+    <p>Example</p>
+    <p> 3 +'';
+      << '3' </p> <p> Another option is to use the toString() method: </p>
+    <p>Example</p>
+    <p> 10..toString();
+      << '10' </p> <p> This can also be used to change the base of the number.
+        For example, if you want to write the number 10 in binary (base two), you could write: </p>
 
-  <p> const age = 39;
-  `I will be ${ age + 1 } next year`;
-  << 'I will be 40 next year' </p>
-
-  <P> The JavaScript expression is placed inside the curly braces with a $ character in front of them. This is then evaluated and the 
-  result is returned in the string output.</P>
-  
-  <P> Template literals can also contain line breaks, which are all converted into a Line Feed (\n): </P>
-  
-  <P> `This is the start ...
-  .... and this is the end`
-  << 'This is the start ...\n\n\n.... and this is the end' </P>
-  
-  <P> If you want to place a backtick inside a template literal, then it needs to be escaped in the usual way, using a backslash:</P>
-  
-  <P> `This character, \`, is a backtick`
-  << 'This character, `, is a backtick' </P>
-  <p> .  </p>
-  <p> .  </p>
-  
-
-  <h3>Chapter 3</h3>
-  
-  <h4>Arrays</h4>
-  <p> - An array is an ordered list of values. To create an array literal, simply write a pair of square brackets: </p>
-
-  <p> Array literal = const myArray = [];
-    << [] </p>
-  <p> Array constructor = 
-
-    const myArray = new Array();
-    << [] </p>
-
-  <p> - Array literal is perfered because it is simpilar and requires less typing </p>
-  <p> .  </p>
-  <p> .  </p>
+    <p>Example</p>
+    <p> 10..toString(2);
+      << '1010' </p> <p> You can go up to base 36, although after base 10, letters are used to represent the digits:
+    </p>
+    <p>Example</p>
+    <p> > 28101..toString(36) // a million in base 36
+      << 'lol' </p> <p> . </p>
+    <p> . </p>
+    <p> . </p>
 
 
-  <h4>Logic</h4>
-       <h5> If Statements </h5>
-            <p>- An if statement has the following structure: </p>
+    <h4>Parsing Numbers</h4>
+    <p>- There is also a useful function called parseInt() that can be used to convert a string representation
+      of a numerical value back into a number. </p>
 
-            <p> if (condition) {
-             // code to run if condition is true
-             } </p>
+    <P>ParseInt('1010',2); // converts from binary, back to decimal
+      << 10 </P> <p> - If a string starts with a number, the parseInt function will use this number and ignore any
+        letters that come afterwards:</p>
 
-            <p>- The code inside the block will only run if the condition in parentheses is true. If the condition is 
-              not a boolean value, it will be converted to a boolean, depending on whether or not it is truthy or falsy. </p>
+    <p>Example: const address = '221B Baker Street';
+      parseInt(address, 10)
+      << 221 </p> <p> - If you use parseInt with a decimal, it will remove anything after the decimal point: </p>
+    <p> parseInt('2.4',10);
+      << 2 </p> <p>Be careful not to think that this is rounding the number to the nearest integer;
+        it simply removes the part after the decimal point.</p>
 
-            <p>- Here is an example that will only display the alert message if the value of the age variable is less than 18: </p>
+    <p> - There is also a similar function called parseFloat() that converts strings into floating point decimal
+      numbers: </p>
 
-            <p> const age = 23;
-             if (age < 18) {
-             console.log('Sorry, you are not old enough to play this game');
-             } </p>
-
-            <p>- Try changing the value of the age variable to a value below 18 as it does in this code, and the alert box will show. </p>
-
-            <p> const age = 12;
-             if (age < 18) {
-             console.log('Sorry, you are not old enough to play this game');
-             } </p>
-  <p> .  </p>
-  <p> .  </p>
-      
-  
-          
-      <h5> Else Statements </h5>
-             <p>- The else keyword can be used to add an alternative block of code to run if the condition is false. 
-             An if ... else statement looks like this: </p>
-
-             <p> if (condition) {
-             // code to run if condition is true
-             } else {
-             // code to run if condition is false
-             } </p>
-
-             <p>- Use this example to determin if  a number is even or odd =  </p>
-             <p> const n = 12;
-             if (n%2 === 0) {
-             console.log('n is an even number');
-             } else {
-             console.log('n is an odd number');
-             }
-             << 'n is an even number' </p>
-
-             <p>- This uses the % operator that we met in the previous chapter to check the remainder when dividing the variable n by 2. 
-             All even numbers leave no remainder when divided by 2, so we can test to see if n%2 is equal to zero; if it is, n must be even. 
-             If n is not even, then it must be odd. </p>
-  <p> .  </p>
-  <p> .  </p>
-             
-            
-  
-      <h5> Switch Statements </h5>
-             <p> - You can actually string lots of if and else statements together to make a logical decision tree: </p>
-             <p> - if (number === 4) {
-              console.log('You rolled a four');
-              } else if (number === 5) {
-              console.log('You rolled a five');
-              } else if(number === 6){
-              console.log('You rolled a six');
-              } else {
-              console.log('You rolled a number less than four');
-              } </p>
-             <p> - The switch operator can be used to make your code easier to follow when there are lots of conditions to test. 
-               The example above can be rewritten using a switch statement like so:
-            </p>
-             <p> switch (number) {
-              case 4:
-              console.log('You rolled a four');
-              break;
-              case 5:
-              console.log('You rolled a five');
-              break;
-              case 6:
-              console.log('You rolled a six');
-              break;
-              default:
-              console.log('You rolled a number less than four');
-              break; } </p>
-             <p> - The value you are comparing goes in parentheses after the switch operator. A case keyword is then used for 
-               each possible value that can occur ( 4 , 5 , and 6 in the example above). After each case statement is the 
-               code that that needs to be run if that case occurs. </p>
-             <p> - It is important to finish each case block with the break keyword, as this stops any more of the case 
-               blocks being executed. Without a break statement, the program will "fall through" and continue to evaluate 
-               subsequent case blocks. This is sometimes implemented on purpose, but it is a hack and can be confusing. 
-               For this reason it should be avoided ― a ninja programmer always finishes a case block with a break ! </p>
-             <p> - The default keyword is used at the end for any code than needs to be run if none of the cases are true. </p>
- <p> .  </p>
- <p> .  </p>
-
-
-  <h4>Loops</h4>
-  <p> - Loops will repeat a piece of code over and over again according to certain conditions.</p>
-       <h5> While Loops </h5>
-                  <p> - While loops run a block of code while a certain condition is true </p>
-                  <p>Example:
-                     while (condition) {
-                    // do something
-                    } </p>
-                  <p> Example that will count down from 10, logging a line from the famous song each time:  </p>
-                  <p> let bottles = 10;
-                    while (bottles > 0){
-                        console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green 
-                        bottle should accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
-                        bottles--;
-                    } </p>
-  <p> .  </p>
-  <p> .  </p>
- 
-
-
-        <h5> Infinite Loops </h5>
-                  <p> - It is important that the condition in a while loop will be met at some point, otherwise your 
-                    code will get stuck in an infinite loop that could possibly crash the program. </p>
-                  <p> Example: 
-                    let n = 1;
-                    while(n>0){
-                        console.log('Hello');
-                        n++;
-                    } </p>
-                  <p> - This loop will keep running, as the variable n will always be above zero. 
-                    Most browsers will warn you that there is a slow running script when this happens and give you the option to stop it. 
-                    If not, you can kill the process by closing the tab or restarting the browser. 
-                    Obviously you want to avoid this happening, though; especially with public-facing code. </p>
-  <p> .  </p>
-  <p> .  </p>
- 
-
-
-        <h5> do ... while Loops </h5>
-                  <p> - A do ... while loop is similar to a while loop. 
-                    The only difference is that the condition comes after the block of code: </p>
-                  <p> Example: 
-                    do {
-                      do something
-                  } while(condition) </p>
-                  
-                  <p> - This means that the block of code will always be run at least once, 
-                    regardless of the condition being true or not. </p>
-  <p> .  </p>
-  <p> .  </p>
- 
-
-
-        <h5> For Loops </h5>
-                  <p> - For loops are probably the most commonly type of loop used in JavaScript, and take the following form: </p>
-                  <p> Example: for (initialization ; condition ; after) { do something } </p>
-                  
-                  <p> - The initialization code is run before the loop starts and is usually employed to initialize any 
-                    variables used in the loop. The condition has to be satisfied for the loop to continue. 
-                    The after code is what to do after each iteration of the loop, and it is typically used to increment 
-                    a counter of some sort. </p>
-                  <p> Example written of a loop: </p>
-                  <p> for (let bottles = 10 ; bottles > 0 ; bottles--) {
-                    console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should 
-                    accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
-                  } </p>
-                  
-                  
-                  <p> - Another way of writing this is: </p>
-                  <p> let bottles = 10; // bottles is initialized here instead
-                    for ( ; bottles > 0 ; ) { // empty initialization and increment
-                        console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should 
-                        accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
-                        bottles--; // increment moved into code block
-                    } </p>
-
-                  <p> - A for loop is considered clearer, as all the details of the loop (the initialization, 
-                    condition and increment) are shown in one place and kept out of the actual code block. </p>
-  <p> .  </p>
-  <p> .  </p>
+    <p> parseFloat('2.9',10);
+      << 2.9 </p> <p> . </p>
+    <p> . </p>
 
 
 
-        <h5> Nested for Loops </h5>
-                  <p> - You can place a loop inside another loop to create a nested loop. 
-                    It will have an inner loop that will run all the way through before the next step of the outer loop occurs. </p>
-                  <p> Example: </p>
-                  <p> for(let i=1 ; j<13 ; i++){
-                    for(let i=1 ; j<13 ; j++){
-                        console.log(`${j} multiplied by ${i} is ${i*j}`);
-                        }
-                    }
-                     </p>
 
-                  <p> - This example allows you to multiply up to 12 times 12. </p>
-                  <p> - Output examples: </p>
-                  <p> << 1 multiplied by 1 is 1 </p>
-                  <p> << 1 multiplied by 2 is 2 </p>
-                  <p> << 12 multiplied by 12 is 144 </p>
-  <p> .  </p>
-  <p> .  </p>
-  
+    <h4>Template Literals</h4>
+    <p> Template literalsare a special types of string that were introduced in ES6. Template literals use the backtick
+      character, ` ,
+      to deliminate
+      the string, as shown in the example below:</p>
 
-  <h4>----Questions----</h4>
-  <p>- How do I seperate my notes into paragraphs?  </p>
-  <P>- How do you know which number to parseInt by? </P> 
-  <p> .  </p>
-  <p> .  </p>
- 
-  <h4>----THE END----</h4>
+    <p> Example </p>
+    <p>`Hello!`;</p>
 
-  <p> .  </p>
-  <p> .  </p>
-  
+    <p> This has the advantage of being able to use both types of quote mark within the string:</p>
+    <p> `She said, "It's Me!"` </p>
+
+    <p> They also allow interpolation of JavaScript code. This means that a JavaScript expression can be inserted inside
+      a string and the
+      result will be displayed, as can be seen in the examples below: </p>
+
+    <P> const name = `Siri`;
+      `Hello ${ name }!`;
+      << 'Hello Siri!' </p> <p> const age = 39;
+        `I will be ${ age + 1 } next year`;
+        << 'I will be 40 next year' </p> <P> The JavaScript expression is placed inside the curly braces with a $
+          character in front of them. This is then evaluated and the
+          result is returned in the string output.</P>
+
+    <P> Template literals can also contain line breaks, which are all converted into a Line Feed (\n): </P>
+
+    <P> `This is the start ...
+      .... and this is the end`
+      << 'This is the start ...\n\n\n.... and this is the end' </P> <P> If you want to place a backtick inside a
+        template literal, then it needs to be escaped in the usual way, using a backslash:</P>
+
+    <P> `This character, \`, is a backtick`
+      << 'This character, `, is a backtick' </P> <p> . </p>
+    <p> . </p>
 
 
-  <h3>Team Activity</h3>
-  
+    <h3>Chapter 3</h3>
+
+    <h4>Arrays</h4>
+    <p> - An array is an ordered list of values. To create an array literal, simply write a pair of square brackets:
+    </p>
+
+    <p> Array literal = const myArray = [];
+      << [] </p> <p> Array constructor =
+
+        const myArray = new Array();
+        << [] </p> <p> - Array literal is perfered because it is simpilar and requires less typing </p>
+    <p> . </p>
+    <p> . </p>
+
+
+    <h4>Logic</h4>
+    <h5> If Statements </h5>
+    <p>- An if statement has the following structure: </p>
+
+    <p> if (condition) {
+      // code to run if condition is true
+      } </p>
+
+    <p>- The code inside the block will only run if the condition in parentheses is true. If the condition is
+      not a boolean value, it will be converted to a boolean, depending on whether or not it is truthy or falsy. </p>
+
+    <p>- Here is an example that will only display the alert message if the value of the age variable is less than 18:
+    </p>
+
+    <p> const age = 23;
+      if (age < 18) { console.log('Sorry, you are not old enough to play this game'); } </p> <p>- Try changing the value
+        of the age variable to a value below 18 as it does in this code, and the alert box will show. </p>
+
+    <p> const age = 12;
+      if (age < 18) { console.log('Sorry, you are not old enough to play this game'); } </p> <p> . </p>
+    <p> . </p>
+
+
+
+    <h5> Else Statements </h5>
+    <p>- The else keyword can be used to add an alternative block of code to run if the condition is false.
+      An if ... else statement looks like this: </p>
+
+    <p> if (condition) {
+      // code to run if condition is true
+      } else {
+      // code to run if condition is false
+      } </p>
+
+    <p>- Use this example to determin if a number is even or odd = </p>
+    <p> const n = 12;
+      if (n%2 === 0) {
+      console.log('n is an even number');
+      } else {
+      console.log('n is an odd number');
+      }
+      << 'n is an even number' </p> <p>- This uses the % operator that we met in the previous chapter to check the
+        remainder when dividing the variable n by 2.
+        All even numbers leave no remainder when divided by 2, so we can test to see if n%2 is equal to zero; if it is,
+        n must be even.
+        If n is not even, then it must be odd. </p>
+    <p> . </p>
+    <p> . </p>
+
+
+
+    <h5> Switch Statements </h5>
+    <p> - You can actually string lots of if and else statements together to make a logical decision tree: </p>
+    <p> - if (number === 4) {
+      console.log('You rolled a four');
+      } else if (number === 5) {
+      console.log('You rolled a five');
+      } else if(number === 6){
+      console.log('You rolled a six');
+      } else {
+      console.log('You rolled a number less than four');
+      } </p>
+    <p> - The switch operator can be used to make your code easier to follow when there are lots of conditions to test.
+      The example above can be rewritten using a switch statement like so:
+    </p>
+    <p> switch (number) {
+      case 4:
+      console.log('You rolled a four');
+      break;
+      case 5:
+      console.log('You rolled a five');
+      break;
+      case 6:
+      console.log('You rolled a six');
+      break;
+      default:
+      console.log('You rolled a number less than four');
+      break; } </p>
+    <p> - The value you are comparing goes in parentheses after the switch operator. A case keyword is then used for
+      each possible value that can occur ( 4 , 5 , and 6 in the example above). After each case statement is the
+      code that that needs to be run if that case occurs. </p>
+    <p> - It is important to finish each case block with the break keyword, as this stops any more of the case
+      blocks being executed. Without a break statement, the program will "fall through" and continue to evaluate
+      subsequent case blocks. This is sometimes implemented on purpose, but it is a hack and can be confusing.
+      For this reason it should be avoided ― a ninja programmer always finishes a case block with a break ! </p>
+    <p> - The default keyword is used at the end for any code than needs to be run if none of the cases are true. </p>
+    <p> . </p>
+    <p> . </p>
+
+
+    <h4>Loops</h4>
+    <p> - Loops will repeat a piece of code over and over again according to certain conditions.</p>
+    <h5> While Loops </h5>
+    <p> - While loops run a block of code while a certain condition is true </p>
+    <p>Example:
+      while (condition) {
+      // do something
+      } </p>
+    <p> Example that will count down from 10, logging a line from the famous song each time: </p>
+    <p> let bottles = 10;
+      while (bottles > 0){
+      console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green
+      bottle should accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
+      bottles--;
+      } </p>
+    <p> . </p>
+    <p> . </p>
+
+
+
+    <h5> Infinite Loops </h5>
+    <p> - It is important that the condition in a while loop will be met at some point, otherwise your
+      code will get stuck in an infinite loop that could possibly crash the program. </p>
+    <p> Example:
+      let n = 1;
+      while(n>0){
+      console.log('Hello');
+      n++;
+      } </p>
+    <p> - This loop will keep running, as the variable n will always be above zero.
+      Most browsers will warn you that there is a slow running script when this happens and give you the option to stop
+      it.
+      If not, you can kill the process by closing the tab or restarting the browser.
+      Obviously you want to avoid this happening, though; especially with public-facing code. </p>
+    <p> . </p>
+    <p> . </p>
+
+
+
+    <h5> do ... while Loops </h5>
+    <p> - A do ... while loop is similar to a while loop.
+      The only difference is that the condition comes after the block of code: </p>
+    <p> Example:
+      do {
+      do something
+      } while(condition) </p>
+
+    <p> - This means that the block of code will always be run at least once,
+      regardless of the condition being true or not. </p>
+    <p> . </p>
+    <p> . </p>
+
+
+
+    <h5> For Loops </h5>
+    <p> - For loops are probably the most commonly type of loop used in JavaScript, and take the following form: </p>
+    <p> Example: for (initialization ; condition ; after) { do something } </p>
+
+    <p> - The initialization code is run before the loop starts and is usually employed to initialize any
+      variables used in the loop. The condition has to be satisfied for the loop to continue.
+      The after code is what to do after each iteration of the loop, and it is typically used to increment
+      a counter of some sort. </p>
+    <p> Example written of a loop: </p>
+    <p> for (let bottles = 10 ; bottles > 0 ; bottles--) {
+      console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should
+      accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
+      } </p>
+
+
+    <p> - Another way of writing this is: </p>
+    <p> let bottles = 10; // bottles is initialized here instead
+      for ( ; bottles > 0 ; ) { // empty initialization and increment
+      console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should
+      accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
+      bottles--; // increment moved into code block
+      } </p>
+
+    <p> - A for loop is considered clearer, as all the details of the loop (the initialization,
+      condition and increment) are shown in one place and kept out of the actual code block. </p>
+    <p> . </p>
+    <p> . </p>
+
+
+
+    <h5> Nested for Loops </h5>
+    <p> - You can place a loop inside another loop to create a nested loop.
+      It will have an inner loop that will run all the way through before the next step of the outer loop occurs. </p>
+    <p> Example: </p>
+    <p> for(let i=1 ; j<13 ; i++){ for(let i=1 ; j<13 ; j++){ console.log(`${j} multiplied by ${i} is ${i*j}`); } } </p>
+        <p> - This example allows you to multiply up to 12 times 12. </p>
+    <p> - Output examples: </p>
+    <p>
+      << 1 multiplied by 1 is 1 </p> <p>
+        << 1 multiplied by 2 is 2 </p> <p>
+          << 12 multiplied by 12 is 144 </p> <p> .
+    </p>
+    <p> . </p>
+
+
+    <h4>----Questions----</h4>
+    <p>- How do I seperate my notes into paragraphs? </p>
+    <P>- How do you know which number to parseInt by? </P>
+    <p> . </p>
+    <p> . </p>
+
+    <h4>----THE END----</h4>
+
+    <p> . </p>
+    <p> . </p>
+
+
+
+    <h3>Team Activity</h3>
+
 </body>
 
 
-  <break></break>
-  
+<break></break>
 
 
-  <h2>Code Examples</h2>
 
-  <label for="input">Get sum of each integer from 1 - n</label><br>
-  <input type="number" id="input">
-  <button id="sum">Sum</button><br>
+<h2>Code Examples</h2>
 
-  <label for="input-two">Add integers from both inputs</label><br>
-  <input type="number" id="input-two">
-  <button id="add">Add</button>
-  
+<label for="input">Get sum of each integer from 1 - n</label><br>
+<input type="number" id="input">
+<button id="sum">Sum</button><br>
 
-  <div id="display"></div>
+<label for="input-two">Add integers from both inputs</label><br>
+<input type="number" id="input-two">
+<button id="add">Add</button>
 
 
-  <script src="../scripts/week2.js"></script>
+<div id="display"></div>
+
+
+<script src="../scripts/week2.js"></script>
 </body>
 
 </html>

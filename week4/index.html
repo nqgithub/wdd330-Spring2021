@@ -11,6 +11,9 @@
 
 <body>
   <h1>Week 04</h1>
+
+  <ul> <a href="/index.html">Home Page</a> </ul>
+
   <h2>Notes</h2>
   <p>From the book: Javascript Novice to Ninja 2nd eddition by Darren Jones</p>
 
@@ -26,9 +29,9 @@
     <br>
 
     <ul>Code</ul>
-    
+
     <img src="/week4/week4Pictures/searchingExample-1_result.jpg" alt="searchingExample-1 Picture" />
-   
+
 
     <br>
 
@@ -99,8 +102,8 @@
     <li>Blur event = The blur event occurs when the user moves the focus away
       from the form element. </li>
 
-     <img src="/week4/week4Pictures/blurEvent-1_result.jpg" alt="blurEvent-1 Picture" />
-  
+    <img src="/week4/week4Pictures/blurEvent-1_result.jpg" alt="blurEvent-1 Picture" />
+
 
     <br>
 
@@ -109,7 +112,7 @@
       makes no changes, and then clicks elsewhere, the change event won’t fire,
       but the blur event will. </li>
 
-      <img src="/week4/week4Pictures/changeEvent-1_result.jpg" alt="changeEvent-1 Picture" />
+    <img src="/week4/week4Pictures/changeEvent-1_result.jpg" alt="changeEvent-1 Picture" />
 
   </ul>
 
@@ -120,7 +123,7 @@
     <li> To submit the content of the form use the "submit" event. </li>
 
     <img src="/week4/week4Pictures/submitForm-1_result.jpg" alt="submitForm-1 Picture" />
-  
+
 
 
     <li> Once you implement the code above you should see a dialog saying "Form submitted" </li>
@@ -140,16 +143,24 @@
     <li> A placeholder attribute can be done wit the following code:</li>
 
     <img src="/week4/week4Pictures/placeHolder-1_result.jpg" alt="placeHolder-1 Picture" />
-  
+
 
   </ul>
 
   <h4> Form Controls </h4>
   <ul>
-    <li> <'input'> = Input fields, including text, passwords, check boxes, radio buttons, and file uploads </li>
-    <li> <'select'> = Menus for drop-down lists of options </li>    
-    <li> <'textarea'> = Elements for longer text entry </li>    
-    <li> <'button'> = Elements for submitting and resetting forms </li>
+    <li>
+      <'input'> = Input fields, including text, passwords, check boxes, radio buttons, and file uploads
+    </li>
+    <li>
+      <'select'> = Menus for drop-down lists of options
+    </li>
+    <li>
+      <'textarea'> = Elements for longer text entry
+    </li>
+    <li>
+      <'button'> = Elements for submitting and resetting forms
+    </li>
 
   </ul>
 
@@ -157,112 +168,112 @@
   <ul>
     <li> "text" = Used for entering a short piece of text </li>
     <li> Value attribute = The initial value of this field can be set in the HTML using the value attribute. </li>
-    <li>  </li>
+    <li> </li>
 
   </ul>
 
-<h4> Password Input Fields </h4>
-<ul>  
-  <li> "input type='password'" = is used to enter passwords or secret information. </li>
-  
-  <img src="/week4/week4Pictures/passwordInput-1_result.jpg" alt="passwordInput-1 Picture" />
-  
-  <img src="/week4/week4Pictures/passwordInput-2_result.jpg" alt="passwordInput-2 Picture" />
+  <h4> Password Input Fields </h4>
+  <ul>
+    <li> "input type='password'" = is used to enter passwords or secret information. </li>
 
-</ul>
+    <img src="/week4/week4Pictures/passwordInput-1_result.jpg" alt="passwordInput-1 Picture" />
+
+    <img src="/week4/week4Pictures/passwordInput-2_result.jpg" alt="passwordInput-2 Picture" />
+
+  </ul>
 
 
-<h4>Checkbox Input Fields</h4>
-<ul>
-  <li> To create a check box set the type as "checkbox" </li>
-  <li>Syntax: type='checkbox'</li> 
-  <li>Example:</li>
-   <p>Super Powers: Check the appropriate box </p>
-   <label for='flight'>Flight:
-       <input type='checkbox' id='flight' value='Flight' name='powers'>
-   </label>
-   <label for='strength'>Super Strength:
-       <input type='checkbox' id='strength' value='Strength' name='powers'>
-   </label>
-   <label for='speed'>Super Speed:
-       <input type='checkbox' id='speed' value='Super Speed' name='powers'>
-   </label>
-   <label for='energy'>Energy Blasts:
-       <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
-       </label>
-   <label for='telekinesis'>Telekinesis:
-       <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
-   </label>
+  <h4>Checkbox Input Fields</h4>
+  <ul>
+    <li> To create a check box set the type as "checkbox" </li>
+    <li>Syntax: type='checkbox'</li>
+    <li>Example:</li>
+    <p>Super Powers: Check the appropriate box </p>
+    <label for='flight'>Flight:
+      <input type='checkbox' id='flight' value='Flight' name='powers'>
+    </label>
+    <label for='strength'>Super Strength:
+      <input type='checkbox' id='strength' value='Strength' name='powers'>
+    </label>
+    <label for='speed'>Super Speed:
+      <input type='checkbox' id='speed' value='Super Speed' name='powers'>
+    </label>
+    <label for='energy'>Energy Blasts:
+      <input type='checkbox' id='energy' value='Energy Blasts' name='powers'>
+    </label>
+    <label for='telekinesis'>Telekinesis:
+      <input type='checkbox' id='telekinesis' value='Telekinesis' name='powers'>
+    </label>
 
-   <br>
-   <br>
-   
+    <br>
+    <br>
 
-   <li> Notice that all the checkbox elements have the same 'name' property of 'powers'. 
-   This means they can be accessed as an HTML collection, like so:  "form.powers;" </li>
 
-</ul>
+    <li> Notice that all the checkbox elements have the same 'name' property of 'powers'.
+      This means they can be accessed as an HTML collection, like so: "form.powers;" </li>
 
-<h4>Radio Button Input Fields</h4>
-<ul>
-  <li> To active this or included this change the type to "radio". </li>
-  <li>Syntax= type='radio' </li>
-  <li>Example:</li>
-  <p>What type of hero are you?</p>
-      <label for='hero'>Hero:
-          <input type='radio' name='category' value='Hero' id='hero'>
-      </label>
-      <label for='villain'>Villain:
-          <input type='radio' name='category' value='Villain' id='villain'>
-      </label>
-      <label for='anti-hero'>Anti-Hero:
-          <input type='radio' name='category' value='Antihero' id='anti-hero'>
-      </label>
+  </ul>
 
-<br>
-<br>
+  <h4>Radio Button Input Fields</h4>
+  <ul>
+    <li> To active this or included this change the type to "radio". </li>
+    <li>Syntax= type='radio' </li>
+    <li>Example:</li>
+    <p>What type of hero are you?</p>
+    <label for='hero'>Hero:
+      <input type='radio' name='category' value='Hero' id='hero'>
+    </label>
+    <label for='villain'>Villain:
+      <input type='radio' name='category' value='Villain' id='villain'>
+    </label>
+    <label for='anti-hero'>Anti-Hero:
+      <input type='radio' name='category' value='Antihero' id='anti-hero'>
+    </label>
 
-  <li> All these radio buttons have the same 'name' attribute of 'category'. You can group'
-    then together under a name called category </li>
-  <li>Access this group with the syntax: form.category; </li>
+    <br>
+    <br>
 
-</ul>
+    <li> All these radio buttons have the same 'name' attribute of 'category'. You can group'
+      then together under a name called category </li>
+    <li>Access this group with the syntax: form.category; </li>
 
-<h4>Other Input Types</h4>
-<ul>
-  <li> There are lots of new input types included in HTML5, such as number , tel and color  </li>
-  <li> To add age to a value include this syntax =  </li>
-<br>
-  <label for='age'>Super Hero's Age:
-    <input type='number' id='age' name='age' min=0 step=1></label>
-<br>
+  </ul>
 
-</ul>
+  <h4>Other Input Types</h4>
+  <ul>
+    <li> There are lots of new input types included in HTML5, such as number , tel and color </li>
+    <li> To add age to a value include this syntax = </li>
+    <br>
+    <label for='age'>Super Hero's Age:
+      <input type='number' id='age' name='age' min=0 step=1></label>
+    <br>
 
-<h4>Select Drop-Down List</h4>
-<ul>
-  <li> Select drop-down lists can be used to select one or more options from a list of values. 
-    The 'multiple' attribute is required if more than one option is to be selected. We’ll use 
-    one in our example to choose the city where our hero operates. </li>
-<br>
-<label for='City'>Super Hero's base of Operations:
-   <select name='city' id='city'>
-       <option value='' selected>Choose a City</option>
-       <option value='Metropolis'>Metropolis</option>
-       <option value='Gotham City'>Gotham City</option>
-       <option value='Keystone City'>Keystone City</option>
-       <option value='Coast City'>Coast City</option>
-       <option value='Star City'>Star City</option>
-   </select>
-</label>
+  </ul>
 
-<br>
-<br>
+  <h4>Select Drop-Down List</h4>
+  <ul>
+    <li> Select drop-down lists can be used to select one or more options from a list of values.
+      The 'multiple' attribute is required if more than one option is to be selected. We’ll use
+      one in our example to choose the city where our hero operates. </li>
+    <br>
+    <label for='City'>Super Hero's base of Operations:
+      <select name='city' id='city'>
+        <option value='' selected>Choose a City</option>
+        <option value='Metropolis'>Metropolis</option>
+        <option value='Gotham City'>Gotham City</option>
+        <option value='Keystone City'>Keystone City</option>
+        <option value='Coast City'>Coast City</option>
+        <option value='Star City'>Star City</option>
+      </select>
+    </label>
 
-</ul>
+    <br>
+    <br>
 
-<h4>Text Area</h4>
-<ul>
+  </ul>
+
+  <h4>Text Area</h4>
+  <ul>
     <li> A <textarea> element is used to enter long pieces of text over multiple 
       lines such as a comment or blog post. They work in much the same way as input 
       fields. We access them using the 'name' attribute, and use the value property 
@@ -270,68 +281,68 @@
 <br>
       <label for='origin'>Origin Story:
         <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
-    </label>
-  </br>
+      </label>
+      </br>
 
-</ul>
+  </ul>
 
-<h4>Buttons</h4>
- <ul>
-   <li>Reset button</li>
-   <button type='reset'>Reset</button>
-<br>
-<br>
-  
-   <li> How to crete a reset buttin: <'button type='reset'>Reset</'button>'" </li>
+  <h4>Buttons</h4>
+  <ul>
+    <li>Reset button</li>
+    <button type='reset'>Reset</button>
+    <br>
+    <br>
 
- </ul>
+    <li> How to crete a reset buttin: <'button type='reset'>Reset</'button>'" </li>
 
-<br>
-<br>
+  </ul>
 
-<h4> Object Oriented Programming </h4>
-<h5>Programming</h5>
-    <li> Programmingis about making computers do what you want. A computer program 
-      is basically a series of instructions that tell your computer how to perform a task. </li>
-    <li>A computer only knows 1's and 0's</li>
-    
-<h5>Low Level Programming Languages</h5>
-    <li> Includes: Machine code and assemby language </li>
+  <br>
+  <br>
 
-<h5>High-level Programming Languages </h5>
-    <li>High-level Programming Languages allow abstractions to be used that make the code easier 
-      for humans to read and write. Programs are written in a language such as C, C++ or Java, 
-      which is then compiled into machine code and executed. The programs written using these 
-      languages are very fast, making high-level languages suited to writing games and professional 
-      business software where speed is important. Most native apps are also written in 
-      higher-level languages. </li>
-     <li> These kinds of languages are faster and are easier for humans to read and write code in. 
-       Most programs now are written in high-level programming</li> 
+  <h4> Object Oriented Programming </h4>
+  <h5>Programming</h5>
+  <li> Programmingis about making computers do what you want. A computer program
+    is basically a series of instructions that tell your computer how to perform a task. </li>
+  <li>A computer only knows 1's and 0's</li>
 
-<h5>Scripting languages</h5>
-    <li>Scripting languagesare also high-level, but they are interpreted, which means they are 
-      translated into machine code at run time. This often makes them slower than compiled languages, 
-      although interpreters are becoming ever more sophisticated, and increasingly blurring the 
-      lines between compiled and interpreted languages.</li>
-    <li>Simmilar to High-level languages a scripting language only translates into machine code 
-      durring runtime</li>
-  
-</ul>
+  <h5>Low Level Programming Languages</h5>
+  <li> Includes: Machine code and assemby language </li>
 
-<br>
+  <h5>High-level Programming Languages </h5>
+  <li>High-level Programming Languages allow abstractions to be used that make the code easier
+    for humans to read and write. Programs are written in a language such as C, C++ or Java,
+    which is then compiled into machine code and executed. The programs written using these
+    languages are very fast, making high-level languages suited to writing games and professional
+    business software where speed is important. Most native apps are also written in
+    higher-level languages. </li>
+  <li> These kinds of languages are faster and are easier for humans to read and write code in.
+    Most programs now are written in high-level programming</li>
 
-<h4>JavaScript</h4>
+  <h5>Scripting languages</h5>
+  <li>Scripting languagesare also high-level, but they are interpreted, which means they are
+    translated into machine code at run time. This often makes them slower than compiled languages,
+    although interpreters are becoming ever more sophisticated, and increasingly blurring the
+    lines between compiled and interpreted languages.</li>
+  <li>Simmilar to High-level languages a scripting language only translates into machine code
+    durring runtime</li>
+
+  </ul>
+
+  <br>
+
+  <h4>JavaScript</h4>
   <li> Nearly all web browsers can run JavaScript, making it one of the most popular programming
-     languages in the world. </li>
+    languages in the world. </li>
   <li> JavaScript is a high-level scripting language that is interpreted and compiled at run time. </li>
-  <li> JavaScript is a dynamic language, so elements of a program can change while it's running, 
+  <li> JavaScript is a dynamic language, so elements of a program can change while it's running,
     and it can do lots of things in the background at run time, such as type checking. </li>
-  
-<h5>History of JavaScript</h5>
+
+  <h5>History of JavaScript</h5>
   <li>Created by Brendan Eich, Netscape (an early browser vendor) worker. </li>
   <li>The new language was originally called Mocha, but it was changed to LiveScript, then hastily
-     rebranded as JavaScript</li>
-  
+    rebranded as JavaScript</li>
+
 
   <br>
 
@@ -349,7 +360,7 @@
 
   <br>
   <br>
- 
+
 
 </body>
 
