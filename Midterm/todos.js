@@ -1,45 +1,33 @@
 import { Todo } from './todo.js';
 
-
-
 let button = document.querySelector('#add')
-    .addEventListener('click', addTodo);
+    .addEventListener('touchend', addTodo);
 
 
 print();
 
-function print() {
-    let table = document.querySelector('table');
-    table.innerHTML = ''
 
-    let toDoList = JSON.parse(localStorage.getItem("name"));
-    if (toDoList == undefined) {
-        toDoList = [];
+//Notes:
+//let button = document.querySelector('#add') is reching out to the HTML file 
+//and looking for an id labled "add". Then its assigning that value to a button
 
-    }
-    toDoList.forEach(
-        todoItem => {
-            table.innerHTML +=
-            
-                `<tr>
-            <td class="${todoItem.Id} checkbox" > <input type="checkbox"> </td>
-            <td class="${todoItem.Id} content" > <span>${ todoItem.Content }</span> </td>
-            <td class="${todoItem.Id} delete" > <button>X</button> </td>
-            
-            </tr>`;
+//.addEventListener('touchend', addTodo); is adding an event listener that will 
+//not run untill the "touchend" event happens. Once "touchend" happens the 
+//function "addTodo" will run (which is defined below).
 
-        }
-    );
-    addEventListenersToDeleteButtons();
-}
+//print(); is running the "print()" function which is defined below
+//
 
 
 
+//----------------------------------------------------
 
 
+//------------------- FUNCTIONS ----------------------
 
 function addTodo() {
     let todoText = document.querySelector('#myInput').value;
+   
     let newTodoItem = new Todo(todoText);
 
     let toDoList = localStorage.getItem("name");
@@ -53,21 +41,51 @@ function addTodo() {
         localStorage.setItem("name", JSON.stringify(toDoList));
     };
 
-
+    // Make sure you alway add a print function to "Save" your changes
     print();
 
 }
 
-function removeTodo(button) {
+
+//Print function  above "print();"
+function print() {
+    let table = document.querySelector('tbody');
+    table.innerHTML = ''
+
     let toDoList = JSON.parse(localStorage.getItem("name"));
-    let currentCell = button.parentNode;
-    toDoList.some( (todoItem, index) => {
-      if(todoItem.Id = currentCell.classList[0]) {
-        toDoList.splice(index, 1);
-      }
-    });
-    localStorage.setItem("name", JSON.stringify(toDoList));
+    if (toDoList == undefined) {
+        toDoList = [];
+
+    }
     
+    toDoList.forEach(
+        todoItem => {
+            table.innerHTML +=
+            
+                `<tr>
+            <td> <input type="checkbox" data-id="${todoItem.Id}"> </td>
+            <td> <span>${ todoItem.Content }</span> </td>
+            <td> <button data-id="${todoItem.Id}"> X </button> </td>
+            
+            </tr>`;
+
+        }
+    );
+    addEventListenersToDeleteButtons();
+}
+
+
+
+
+
+
+//Remove Todo items
+function removeTodo(toDoId) {
+    let toDoList = JSON.parse(localStorage.getItem("name"));
+    let toDoIndex = toDoList.findIndex(todoItem => todoItem.Id == toDoId);
+    toDoList.splice(toDoIndex, 1);
+    localStorage.setItem("name", JSON.stringify(toDoList));
+    print();
 }
 
 
@@ -78,7 +96,7 @@ function addEventListenersToDeleteButtons() {
     arrayOfDeleteButtons.forEach(function (button) {
         console.log(button)
         button.addEventListener("touchend", function (event) {
-                removeTodo(event.target);
+                removeTodo(event.target.dataset.id);
                 print();
             }
 
