@@ -1,4 +1,6 @@
-import { Todo } from './todo.js';
+import {
+    Todo
+} from './todo.js';
 
 let button = document.querySelector('#add')
     .addEventListener('touchend', addTodo);
@@ -27,7 +29,7 @@ print();
 
 function addTodo() {
     let todoText = document.querySelector('#myInput');
-   
+
     let newTodoItem = new Todo(todoText.value);
 
 
@@ -63,11 +65,11 @@ function print() {
         toDoList = [];
 
     }
-    
+
     toDoList.forEach(
         todoItem => {
             table.innerHTML +=
-            
+
                 `<tr>
             <td> <input type="checkbox" data-id="${todoItem.Id}"> </td>
             <td> <span>${ todoItem.Content }</span> </td>
@@ -78,6 +80,17 @@ function print() {
         }
     );
     addEventListenersToDeleteButtons();
+
+    let toDoCheckBoxes = document.querySelectorAll('input[type="checkbox"]');
+
+    toDoCheckBoxes.forEach(
+        toDoCheckBox => {
+            toDoCheckBox.addEventListener('touchend', () => {
+                print();
+            })
+        }
+    );
+
 }
 
 
