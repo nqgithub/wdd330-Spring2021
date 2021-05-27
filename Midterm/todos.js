@@ -26,9 +26,15 @@ print();
 //------------------- FUNCTIONS ----------------------
 
 function addTodo() {
-    let todoText = document.querySelector('#myInput').value;
+    let todoText = document.querySelector('#myInput');
    
-    let newTodoItem = new Todo(todoText);
+    let newTodoItem = new Todo(todoText.value);
+
+
+    //Reset form (Clears out the textbox where you 
+    //add new todoText)
+    todoText.value = '';
+
 
     let toDoList = localStorage.getItem("name");
     if (toDoList == undefined) {
