@@ -71,7 +71,7 @@ function print() {
             table.innerHTML +=
 
                 `<tr>
-            <td> <input type="checkbox" data-id="${todoItem.Id}"> </td>
+            <td> <input type="checkbox" data-id="${todoItem.Id}" ${todoItem.Completed ?"checked" :''} > </td>
             <td> <span>${ todoItem.Content }</span> </td>
             <td> <button data-id="${todoItem.Id}"> X </button> </td>
             
@@ -81,11 +81,26 @@ function print() {
     );
     addEventListenersToDeleteButtons();
 
+
     let toDoCheckBoxes = document.querySelectorAll('input[type="checkbox"]');
 
     toDoCheckBoxes.forEach(
         toDoCheckBox => {
-            toDoCheckBox.addEventListener('touchend', () => {
+            toDoCheckBox.addEventListener('touchend', event => {
+                let checkBoxId = event.target.dataset.id;
+                let checkBox = event.target
+                let spanParent = checkBox.parentNode.nextElementSibling
+                
+                if (!checkBox.checked) {
+                    spanParent.style.textDecorationLine = "line-though";
+                    setCompleted(true, checkBoxId);
+
+                } 
+                else {
+                    spanParent.style.textDecorationLine = "none";
+                    setCompleted(false, checkBoxId);
+                }
+
                 print();
             })
         }
@@ -94,7 +109,13 @@ function print() {
 }
 
 
-
+function setCompleted(isCompleted, checkBoxId){
+    let toDoList = JSON.parse(localStorage.getItem("name"));
+    let toDoIndex = toDoList.findIndex(todoItem => todoItem.Id == checkBoxId);
+    toDoList[toDoIndex].Completed = isCompleted
+    localStorage.setItem("name", JSON.stringify(toDoList));
+    
+}
 
 
 
@@ -113,7 +134,7 @@ function addEventListenersToDeleteButtons() {
     let arrayOfDeleteButtons = document.querySelectorAll("button");
 
     arrayOfDeleteButtons.forEach(function (button) {
-        console.log(button)
+        // console.log(button)
         button.addEventListener("touchend", function (event) {
                 removeTodo(event.target.dataset.id);
                 print();
