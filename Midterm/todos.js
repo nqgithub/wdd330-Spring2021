@@ -2,8 +2,32 @@ import {
     Todo
 } from './todo.js';
 
+let status = "all";
 let button = document.querySelector('#add')
     .addEventListener('touchend', addTodo);
+let all = document.querySelector("#all");
+all.addEventListener('touchend', () => {
+    status = 'all';
+    print();
+});
+
+let active = document.querySelector("#active");
+active.addEventListener('touchend', () => {
+    status = 'active';
+    print(true);
+});
+
+let completed = document.querySelector("#completed");
+completed.addEventListener('touchend', () => {
+    status = 'completed';
+    print(false);
+});
+
+
+
+let countType = document.querySelector("#countType");
+let count = document.querySelector("#count");
+
 
 
 print();
@@ -56,8 +80,8 @@ function addTodo() {
 
 
 //Print function  above "print();"
-function print() {
-    let table = document.querySelector('tbody');
+function print(filterForActive) {
+    let table = document.querySelector('#listTable');
     table.innerHTML = ''
 
     let toDoList = JSON.parse(localStorage.getItem("name"));
@@ -66,19 +90,52 @@ function print() {
 
     }
 
+    let sum = 0
+
+    switch (filterForActive) {
+        case undefined:
+            countType.innerText = status + ' tasks';
+            console.log("undefined"+toDoList);
+            break;
+            
+        case true:
+            
+            toDoList = toDoList.filter(toDoItem => !toDoItem.Completed);
+            countType.innerText = status + ' tasks';
+            console.log("activeTrue"+toDoList);
+            
+            break;
+
+        case false:
+            toDoList = toDoList.filter(toDoItem => toDoItem.Completed);
+            countType.innerText = status + ' tasks';
+            console.log("activeFalse"+toDoList);
+            break;
+        
+    }
+
     toDoList.forEach(
         todoItem => {
             table.innerHTML +=
 
                 `<tr>
             <td> <input type="checkbox" data-id="${todoItem.Id}" ${todoItem.Completed ?"checked" :''} > </td>
+
             <td> <span>${ todoItem.Content }</span> </td>
-            <td> <button data-id="${todoItem.Id}"> X </button> </td>
+
+            <td> <button class="deleted" data-id="${todoItem.Id}"> X </button> </td>
             
             </tr>`;
+            
+            sum++;
 
         }
+
+
     );
+
+    count.innerText = sum;
+
     addEventListenersToDeleteButtons();
 
 
@@ -86,35 +143,41 @@ function print() {
 
     toDoCheckBoxes.forEach(
         toDoCheckBox => {
-            toDoCheckBox.addEventListener('touchend', event => {
+            toDoCheckBox.addEventListener('click', event => {
                 let checkBoxId = event.target.dataset.id;
                 let checkBox = event.target
                 let spanParent = checkBox.parentNode.nextElementSibling
-                
-                if (!checkBox.checked) {
+
+                if (checkBox.checked) {
                     spanParent.style.textDecorationLine = "line-though";
                     setCompleted(true, checkBoxId);
 
-                } 
-                else {
+                } else {
                     spanParent.style.textDecorationLine = "none";
                     setCompleted(false, checkBoxId);
                 }
 
-                print();
+
             })
         }
     );
+    toDoCheckBoxes.forEach((checkBox, index) => {
+        if (toDoList[index].Completed) {
+            checkBox.click();
+        }
+    });
 
 }
 
 
-function setCompleted(isCompleted, checkBoxId){
+
+
+function setCompleted(isCompleted, checkBoxId) {
     let toDoList = JSON.parse(localStorage.getItem("name"));
     let toDoIndex = toDoList.findIndex(todoItem => todoItem.Id == checkBoxId);
     toDoList[toDoIndex].Completed = isCompleted
     localStorage.setItem("name", JSON.stringify(toDoList));
-    
+
 }
 
 
@@ -131,7 +194,7 @@ function removeTodo(toDoId) {
 
 //Add event listeners to delete items
 function addEventListenersToDeleteButtons() {
-    let arrayOfDeleteButtons = document.querySelectorAll("button");
+    let arrayOfDeleteButtons = document.querySelectorAll(".deleted");
 
     arrayOfDeleteButtons.forEach(function (button) {
         // console.log(button)

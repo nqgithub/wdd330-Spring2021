@@ -1,0 +1,10 @@
+img {
+    width: 370px;
+
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+    /* border: thin solid black; */
+}

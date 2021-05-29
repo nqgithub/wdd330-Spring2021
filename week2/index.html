@@ -10,11 +10,10 @@
 </head>
 
 <body>
-  <h1>Week 02</h1>
+  <h1>Week 02 Notes</h1>
 
   <ul> <a href="/index.html">Home Page</a> </ul>
 
-  <h2>Notes</h2>
   <p>From the book: Javascript Novice to Ninja 2nd eddition by Darren Jones</p>
 
   <ul>
@@ -52,8 +51,8 @@
       another object, as it will produce an error </p>
   <p> - You should try to use const to declare most variables. This helps to avoid any bugs caused by unexpected changes
     in assignment. </p>
-  <p> . </p>
-  <p> . </p>
+  <br>
+  <br>
 
 
 
@@ -62,8 +61,8 @@
   <p> - Scope is an important concept in programming. It refers to where a constant or variable is accessible by the
     program.
     There are two common scopes that are often referred to in programs: global scope and local scope. </p>
-  <p> . </p>
-  <p> . </p>
+  <br>
+  <br>
 
   <h5> Global Scope </h5>
   <p>Any variable declared outside of a block is said to have global scope. This means it is accessible
@@ -85,8 +84,8 @@
   <p> - The same variable name is used in different situations. </p>
   <p> - It can also be a problem when you are writing code in teams, or if you’re using code libraries that
     may use the same variable names as some of your own code. </p>
-  <p> . </p>
-  <p> . </p>
+  <br>
+  <br>
 
 
   <h5> Local Scope </h5>
@@ -98,9 +97,8 @@
   <p> - Only us global scope variables for specific purposes and when you need. </p>
 
   <p> -In general, if a value is unlikely to change in your code then you should declare it using "const" or "let". </p>
-  <p> . </p>
-  <p> . </p>
-
+  <br>
+  <br>
 
 
   <h4>Converting Between Strings and Numbers</h4>
@@ -125,7 +123,8 @@
     <p>
       const answer = +'5';
       << 5 typeof answer; << 'number' </p> <p> . </p>
-    <p> . </p>
+    <br>
+
 
 
 
@@ -151,8 +150,8 @@
     <p>Example</p>
     <p> > 28101..toString(36) // a million in base 36
       << 'lol' </p> <p> . </p>
-    <p> . </p>
-    <p> . </p>
+    <br>
+    <br>
 
 
     <h4>Parsing Numbers</h4>
@@ -175,7 +174,8 @@
 
     <p> parseFloat('2.9',10);
       << 2.9 </p> <p> . </p>
-    <p> . </p>
+    <br>
+
 
 
 
@@ -213,7 +213,8 @@
 
     <P> `This character, \`, is a backtick`
       << 'This character, `, is a backtick' </P> <p> . </p>
-    <p> . </p>
+    <br>
+
 
 
     <h3>Chapter 3</h3>
@@ -227,8 +228,8 @@
 
         const myArray = new Array();
         << [] </p> <p> - Array literal is perfered because it is simpilar and requires less typing </p>
-    <p> . </p>
-    <p> . </p>
+    <br>
+    <br>
 
 
     <h4>Logic</h4>
@@ -251,7 +252,8 @@
 
     <p> const age = 12;
       if (age < 18) { console.log('Sorry, you are not old enough to play this game'); } </p> <p> . </p>
-    <p> . </p>
+    <br>
+
 
 
 
@@ -277,8 +279,8 @@
         All even numbers leave no remainder when divided by 2, so we can test to see if n%2 is equal to zero; if it is,
         n must be even.
         If n is not even, then it must be odd. </p>
-    <p> . </p>
-    <p> . </p>
+    <br>
+    <br>
 
 
 
@@ -317,8 +319,8 @@
       subsequent case blocks. This is sometimes implemented on purpose, but it is a hack and can be confusing.
       For this reason it should be avoided ― a ninja programmer always finishes a case block with a break ! </p>
     <p> - The default keyword is used at the end for any code than needs to be run if none of the cases are true. </p>
-    <p> . </p>
-    <p> . </p>
+    <br>
+    <br>
 
 
     <h4>Loops</h4>
@@ -336,8 +338,8 @@
       bottle should accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
       bottles--;
       } </p>
-    <p> . </p>
-    <p> . </p>
+    <br>
+    <br>
 
 
 
@@ -355,8 +357,8 @@
       it.
       If not, you can kill the process by closing the tab or restarting the browser.
       Obviously you want to avoid this happening, though; especially with public-facing code. </p>
-    <p> . </p>
-    <p> . </p>
+    <br>
+    <br>
 
 
 
@@ -370,70 +372,71 @@
 
     <p> - This means that the block of code will always be run at least once,
       regardless of the condition being true or not. </p>
-    <p> . </p>
-    <p> . </p>
+    <<br>
+      <br>
 
 
 
-    <h5> For Loops </h5>
-    <p> - For loops are probably the most commonly type of loop used in JavaScript, and take the following form: </p>
-    <p> Example: for (initialization ; condition ; after) { do something } </p>
+      <h5> For Loops </h5>
+      <p> - For loops are probably the most commonly type of loop used in JavaScript, and take the following form: </p>
+      <p> Example: for (initialization ; condition ; after) { do something } </p>
 
-    <p> - The initialization code is run before the loop starts and is usually employed to initialize any
-      variables used in the loop. The condition has to be satisfied for the loop to continue.
-      The after code is what to do after each iteration of the loop, and it is typically used to increment
-      a counter of some sort. </p>
-    <p> Example written of a loop: </p>
-    <p> for (let bottles = 10 ; bottles > 0 ; bottles--) {
-      console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should
-      accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
-      } </p>
-
-
-    <p> - Another way of writing this is: </p>
-    <p> let bottles = 10; // bottles is initialized here instead
-      for ( ; bottles > 0 ; ) { // empty initialization and increment
-      console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should
-      accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
-      bottles--; // increment moved into code block
-      } </p>
-
-    <p> - A for loop is considered clearer, as all the details of the loop (the initialization,
-      condition and increment) are shown in one place and kept out of the actual code block. </p>
-    <p> . </p>
-    <p> . </p>
+      <p> - The initialization code is run before the loop starts and is usually employed to initialize any
+        variables used in the loop. The condition has to be satisfied for the loop to continue.
+        The after code is what to do after each iteration of the loop, and it is typically used to increment
+        a counter of some sort. </p>
+      <p> Example written of a loop: </p>
+      <p> for (let bottles = 10 ; bottles > 0 ; bottles--) {
+        console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should
+        accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
+        } </p>
 
 
+      <p> - Another way of writing this is: </p>
+      <p> let bottles = 10; // bottles is initialized here instead
+        for ( ; bottles > 0 ; ) { // empty initialization and increment
+        console.log(`There were ${bottles} green bottles, hanging on a wall. And if one green bottle should
+        accidentally fall, there'd be ${bottles-1} green bottles hanging on the wall`);
+        bottles--; // increment moved into code block
+        } </p>
 
-    <h5> Nested for Loops </h5>
-    <p> - You can place a loop inside another loop to create a nested loop.
-      It will have an inner loop that will run all the way through before the next step of the outer loop occurs. </p>
-    <p> Example: </p>
-    <p> for(let i=1 ; j<13 ; i++){ for(let i=1 ; j<13 ; j++){ console.log(`${j} multiplied by ${i} is ${i*j}`); } } </p>
-        <p> - This example allows you to multiply up to 12 times 12. </p>
-    <p> - Output examples: </p>
-    <p>
-      << 1 multiplied by 1 is 1 </p> <p>
-        << 1 multiplied by 2 is 2 </p> <p>
-          << 12 multiplied by 12 is 144 </p> <p> .
-    </p>
-    <p> . </p>
-
-
-    <h4>----Questions----</h4>
-    <p>- How do I seperate my notes into paragraphs? </p>
-    <P>- How do you know which number to parseInt by? </P>
-    <p> . </p>
-    <p> . </p>
-
-    <h4>----THE END----</h4>
-
-    <p> . </p>
-    <p> . </p>
+      <p> - A for loop is considered clearer, as all the details of the loop (the initialization,
+        condition and increment) are shown in one place and kept out of the actual code block. </p>
+      <br>
+      <br>
 
 
 
-    <h3>Team Activity</h3>
+      <h5> Nested for Loops </h5>
+      <p> - You can place a loop inside another loop to create a nested loop.
+        It will have an inner loop that will run all the way through before the next step of the outer loop occurs. </p>
+      <p> Example: </p>
+      <p> for(let i=1 ; j<13 ; i++){ for(let i=1 ; j<13 ; j++){ console.log(`${j} multiplied by ${i} is ${i*j}`); } }
+          </p> <p> - This example allows you to multiply up to 12 times 12. </p>
+      <p> - Output examples: </p>
+      <p>
+        << 1 multiplied by 1 is 1 </p> <p>
+          << 1 multiplied by 2 is 2 </p> <p>
+            << 12 multiplied by 12 is 144 </p> <p> .
+      </p>
+      <br>
+
+
+
+      <h4>----Questions----</h4>
+      <p>- How do I seperate my notes into paragraphs? </p>
+      <P>- How do you know which number to parseInt by? </P>
+      <br>
+      <br>
+
+      <h4>----THE END----</h4>
+
+      <br>
+      <br>
+
+
+
+      <h3>Team Activity</h3>
 
 </body>
 
