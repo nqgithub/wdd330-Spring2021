@@ -4,8 +4,16 @@ img {
     
 }
 
+header,h1,h2 {
+    background-color: royalblue;
+    margin-bottom: 1em;
+}
+
+
+
 body {
     text-align: center;
+    font-family:'Times New Roman', Times, serif;
 
 }
 
