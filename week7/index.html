@@ -18,23 +18,116 @@
   <p>From the book: Javascript Novice to Ninja 2nd eddition by Darren Jones</p>
 
 
-  <h3> Chapter # </h3>
-  <br>
+  <h3> Chapters 11 and 13 </h3>
+  
 
   <div>
-    <h4> Title </h4>
-    <li> First Note</li>
+    <h4> Function Properties and Methods </h4>
+    <li> The fact that functions are first-class objects means they can have
+      properties and methods themselves. For example, all functions have a length
+      property that returns the number of parameters the function has. </li>
+
+    <br>
+
+    <h4> Call and Apply Methods </h4>
+    <li> The call() method can be used to set the value of this inside a function
+      to an object that is provided as the first argument. </li>
+    <li> If the function that’s called requires any parameters, these need to be
+      provided as arguments after the first argument, which is always the value of this </li>
+    <li> If a function doesn’t refer to an object as this in its body, it can still be called
+      using the call() method, but you need provide null as its first argument. </li>
+
+    <br>
+
+    <!-- <img src="/week5/week5Pictures/strict-1_result.jpg" alt="strict-1 Picture" /> -->
+
+    <img src="/week7/week7Pictures/callAndApplyMethods-1_result.jpg" alt="callAndApplyMethods-1 Picture">
+    <br>
+    <img src="/week7/week7Pictures/callAndApplyMethods-2_result.jpg" alt="callAndApplyMethods-2 Picture">
+    <br>
+    <img src="/week7/week7Pictures/callAndApplyMethods-3_result.jpg" alt="callAndApplyMethods-3 Picture">
+    <br>
+    <img src="/week7/week7Pictures/callAndApplyMethods-4_result.jpg" alt="callAndApplyMethods-4 Picture">
+    <br>
+    <img src="/week7/week7Pictures/callAndApplyMethods-5_result.jpg" alt="callAndApplyMethods-5 Picture">
 
 
+    <br>
+
+    <h4> Custom Properties </h4>
+    <li> There is nothing to stop you adding your own properties to functions
+      in the same way that you can add properties to any object in JavaScript.
+      For example, you could add a description property to a function that
+      describes what it does: </li>
+    <br>
+    <img src="/week7/week7Pictures/customProperties-1_result.jpg" alt="customProperties-1 Picture">
+    
+
+    <br>
+
+    <h4> Memoization </h4>
+    <li> This is basicly saving or storing the results/ cache of a function. 
+      So if the function gets called again it can just show the result that 
+      it has already found, instead of running the entire function again. </li>
+      <br>
+    <ul> Example: </ul>
+    <img src="/week7/week7Pictures/memoization-1_result.jpg" alt="memoization-1 Picture">
+   <br>
+    <img src="/week7/week7Pictures/memoization-2_result.jpg" alt="memoization-2 Picture">
+    
+    <br>
+
+    <h4> Ajax </h4>
+    <li> Ajax is a technique that allows web pages to communicate asynchronously 
+      with a server, and it dynamically updates web pages without reloading. 
+      This enables data to be sent and received in the background, as well as 
+      portions of a page to be updated in response to user events, while the rest 
+      of the program continues to run. </li>
+      <li>A.K.A. This allows websites to update and continue to work in the 
+        background</li>
+    
+<br>
+
+    <h4> Clients and Servers </h4>
+    <li> The web of computers known as the internet can be separated into two parts: 
+      clients and servers. A client, such as a web browser, will request a resource 
+      (usually a web page) from a server, which processes the request and sends back 
+      a response to the client. </li>
+
+    <li> JavaScript was originally designed as a client-side scripting language, 
+      meaning that it ran locally in the browser, adding dynamic features to the 
+      web page that was returned from the server. Ajax allows JavaScript to request 
+      resources from a server on behalf of the client. The resources requested 
+      are usually JSON data or small fragments of text or HTML rather than a whole 
+      web page. </li>
+
+    <li> Consequently, a server is required when requesting resources using Ajax. 
+      Typically this involves using a server-side language, such as PHP, Ruby, 
+      Node.js, or .NET to serve the data response following an Ajax request 
+      (usually from a back-end database). </li>
+    <li> Java script can work in the background and ask from information from the 
+      server on behalf of the browser (client). </li>
+    
+    <br>
+
+    <!-- <h4> </h4>
+    <li> </li>
+    <li> </li>
+    <li> </li> -->
+
+    
   </div>
   
   <br>
   <br>
-
+  
 
   <h4>-------- Questions --------</h4>
-  <li> None</li>
+  <li> What is the diffrence between call() and apply() ? </li>
+  <li> </li>
+
   <p>------------------------------</p>
+
   <br>
 
   <p>------------------------------</p>
