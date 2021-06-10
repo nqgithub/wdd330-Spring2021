@@ -67,10 +67,10 @@
         <br>
 
         <h4> More on Translation </h4>
-        <li> If you only want to move an element vertically or horizontally, 
+        <li> If you only want to move an element vertically or horizontally,
             you can use the translatex or translatey functions respectively. </li>
-            <br>
-            <br>
+        <br>
+        <br>
         <ul> Example: </ul>
         <ul> To move 45px to the right along the x axis, include: </ul>
         <br>
@@ -79,9 +79,9 @@
         <ul> To move up along the y axis by 30px, include: </ul>
         <p> ----------------------- moreOnTranslation-2 ----------------------- </p>
         <br>
-        <li> Transforms don’t work on inline elements. But that’s easy enough to fix. 
+        <li> Transforms don’t work on inline elements. But that’s easy enough to fix.
             Just add "display: inline-block;" to your span: </li>
-        
+
         <ul> Example: </ul>
         <p> ----------------------- moreOnTranslation-3 ----------------------- </p>
         <br>
@@ -89,35 +89,148 @@
         <p> ----------------------- moreOnTranslation-4 ----------------------- </p>
         <br>
 
-        <li> By doing this when the user hovers over "Dukes" the word will more to 
+        <li> By doing this when the user hovers over "Dukes" the word will more to
             the right by 40px as intended.</li>
-        
+
         <p> ----------------------- figure8.2 ----------------------- </p>
 
         <br>
 
         <h4> Scaling </h4>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        <li> Scaling
+            The scale(x,y) function scales an element by the defined factors
+            horizontally then vertically. If only one value is provided,
+            it will be used for both the x and y values, growing or shrinking
+            your element or pseudo-element while maintaining the original aspect
+            ratio. For example, scale(1) would leave the element the same size,
+            scale(2) would double its proportions, scale(0.5) would halve them,
+            and so on. Providing different values will distort the element, as
+            you’d expect:</li>
+        <ul> For examople: </ul>
+        <ul> You could use "transform: scale(1.5, 0.25);" </ul>
+        <ul> or </ul>
+        <ul> "scale(2)" to double it. or "scale(0.5)" to half it. </ul>
+        <ul> You can also us "scaleX(x)" for just the x axis or "scaleY(y)" for the
+            y axis. </ul>
+        <br>
+        
+        <!-- --------------- Example of scaling that didn't work ----------------- -->
+        <!-- <h3>Normal</h3>
+        <h3 style="transform: scale(1.5,0.25);"> This is bigger</h3> -->
 
+        <br>
+        <p> ----------------------- scaling-1 ----------------------- </p>
 
         <br>
 
-        <h4> </h4>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        <h4> Rotation </h4>
+        <li> The rotate() function rotates an element around the point of origin
+            by a specified angle value. As with scale , by default the point of
+            origin is the element’s center. Generally, angles are declared in
+            degrees, with positive degrees moving clockwise and negative moving
+            counterclockwise. In addition to degrees, values can be provided in
+            grads, radians, or turns, but we’ll just be sticking with degrees. </li>
+        <li> Make sure that you add this all on one line (Look at the transform part
+            in the picture below.) </li>
+        <li>Also make sure you more the rotation transormation by degrees.
+            (Example rotate(10deg)</li>
+        <br>
+        <h1 style="color:red; transform: rotate(-12deg);"> Example of rotation </h1>
+
+        <br>
+        <br>
+        <br>
+        <p> ----------------------- rotation-1 ----------------------- </p>
+
+        <br>
+
+        <h4> Skew </h4>
+        <li> The skew(x,y) function specifies a skew along the x and y axes.
+            As you’d expect, the x specifies the skew on the x axis, and the
+            y specifies the skew on the y axis. If the second parameter is omitted,
+            the skew will only occur on the x axis: </li>
+        <br>
+        <h1 style="color: blue; transform: skew(15deg, 4deg); "> Example of Skew</h1>
+
+        <ul>Example code: </ul>
+        <p> ----------------------- skew-1 ----------------------- </p>
+
+        <br>
+
+        <h4> Canvas </h4>
+        <li> Canvas is an API that allows you to draw anything using 
+            JavaScript. </li>
+        <li>  In addition, canvas gives us the power to manipulate pixels in images 
+            and even video. </li>
+        <li> The Canvas API is supported in: Chrome 4+, Firefox 2+, Opera 9.6+,
+            Safari 3.1+, iOS 3.2+, Internet Explorer 9.0+, Android 3.0+ </li>
+        <li>Canvas ws designed by Apple. </li>
+        <br>
+        <li> Canvas Setup </li>
+        <br>
+        <p> ----------------------- canvas-1 ----------------------- </p>
+        <br>
+        <p> ----------------------- canvas-2 ----------------------- </p>
+        <br>
+        <p> ----------------------- canvas-3 ----------------------- </p>
+        <br>
+        <p> ----------------------- canvas-4 ----------------------- </p>  
+        <li>Note: All drawing on the canvas happens via the Canvas JavaScript API.</li>
+        <br>
+
+        <h4> Getting the Context </h4>
+        <li> This section has to do with getting the context of the canvas board.</li>
+        <li> Canvas's context is just the rendering portion of the drawing. </li>
+        <br>
+        <p> ----------------------- gettingTheContext-1 ----------------------- </p>  
+        <br>
+        <li> This, above, is 2d but 3d is supported with the latest browsers. </li>
+        
+        <br>
+
+        <h4> Filling Our Brush with Color </h4>
+        <li> On a real-life painting canvas, you must first saturate your brush with 
+            paint before you can begin. In the HTML5 canvas, you must do the same, 
+            and we do so with the strokeStyle or fillStyle properties. Both strokeStyle 
+            and fillStyle are set on a context object, and both take one of three 
+            values: a string representing a color, a CanvasGradient object, or a 
+            CanvasPattern object. </li>
+        <li> Think of the stroke as the border of the shape you’re going to draw. </li>
+        <ul> Example: To draw a rectangle with a red border, we first define the stroke color: </ul>
+        
+
+        <br>
+        <h4> Scalable Vector Graphics (SVG)</h4>
+        <li>SVG stands forScalable Vector Graphics, a specific file format that allows you to describe 
+            vector graphics using XML. A major selling point of vector graphics in general is that, 
+            unlike bitmap images (such as GIF, JPEG, PNG, and TIFF), vector images preserve their 
+            quality even as you blow them up or shrink them down.</li>
+        <li></li>
+        <li></li>
+
+        <br>
+        <h4></h4>
+        <li></li>
+        <li></li>
+        <li></li>
 
 
     </div>
 
+
+
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
 
 
     <h4>-------- Questions --------</h4>
-    <li> None </li>
+    <li> How do you prevent overlapping when transforming text?
+        Example with scaling. </li>
+    <li>When scaling why does my text disapear?</li>
 
     <p>------------------------------</p>
 
