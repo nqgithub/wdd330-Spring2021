@@ -15,29 +15,159 @@
     <ul> <a href="/index.html">Home Page</a> </ul>
 
     <h2>Notes</h2>
-    <p>From the book: HTML5 and CSS3 for the Real World: 2nd Eddition</p>
+    <p>From the book: Javascript Novice to Ninja 2nd eddition by Darren Jones</p>
 
 
-    <h3> Chapters ---------------</h3>
+    <h3> Chapters 9 and 14 </h3>
 
 
     <div>
-        <h4> Title </h4>
+        <h4> The Window Object </h4>
 
-        <h4> Title </h4>
-        <li>  </li>
-        <li>  </li>
-        <li>  </li>
+        <h4> The Browser Object Model (BOM) </h4>
+        <li> The Browser Object Model (or BOM for short) is a collection of properties
+            and methods that contain information about the browser and computer screen.
+            For example, we can find out which browser is being used to view a page
+            (though, this method is unreliable). We can also find out the dimensions of
+            the screen it is viewed on, and which pages have been visited before the
+            current page. </li>
+        <li> The code below is how you can assign your object to a global scope: </li>
+
+        <br>
+        <p> ---------------------- browserObjectModel-1 ---------------------------- </p>
+        <br>
+
+        <h4> Going Global </h4>
+        <li> Global variables are actual properties of a global object. In a browser
+            environment, the global object is the window object. This means that any
+            global variable created is actually a property of the window object </li>
+        <li> To make something a global object you don't use const, let, or var. </li>
+        <li> Any global variable created is actually a property of the window object </li>
+        <li> Some functions we’ve already met, such as parseInt() and isNaN() , are
+            actually methods of the global object, which in a browser environment makes
+            them methods of the window object: </li>
+        <br>
+        <p> ---------------------- goingGlobal-1 ---------------------------- </p>
+        <br>
+        <p> ---------------------- goingGlobal-2 ---------------------------- </p>
+        <br>
+
+        <h4> Dialogs </h4>
+        <li> In Chapter 1, we introduced three functions that produced dialogs in the
+            browsers: alert() , confirm() and prompt() . These are not part of the
+            ECMAScript standard, although all major browsers support them as methods
+            of the window object. </li>
+        <li> The window.alert() method will pause the execution of the program and
+            display a message in a dialog box. The message is provided as an argument
+            to the method, and undefined is always returned: </li>
+        <li> You can user the coed below to create a popup window the user can then 
+            close</li>
+        <li> To create a popup window you can use alert(), confirm(), or propmt().
+            All of these will work but display diffrent messages. See below.</li>
+        <br>
+        <ul>Alert Window:</ul>
+        <br>
+        <p> ---------------------- alertDialog-1 ---------------------------- </p>
+        <br>
+        <p> ---------------------- alertDialog-2 ---------------------------- </p>
+        <br>
+
+        <ul>Confirm Window</ul>
+        <li> You use "confirm()" or "windows.confirm('Message goes here');" </li>
+        <br>
+        <p> ---------------------- confirmDialog-1 ---------------------------- </p>
+        <br>
+        <p> ---------------------- confirmDialog-2 ---------------------------- </p>
+        <br>
+       
+        <ul>Prompt Window</ul>
+        <li> You use "prompt()" or "windows.prompt('Message goes here');" </li>
+        <br>
+        <p> ---------------------- promptDialog-1 ---------------------------- </p>
+        <br>
+        <p> ---------------------- promptDialog-2 ---------------------------- </p>
+        <br>
+
+        <h4> Which Browser? </h4>
+        <li> The window object has a navigator property that returns a reference 
+            to the Navigator object. The Navigator object contains information 
+            about the browser being used. Its userAgent property will return 
+            information about the browser and operating system being used.  </li>
+        <li> For this you can use the "window.navigator.userAgent" command but don't 
+            rely on this command because it can be off/wrong. </li>
         
-        <h4>  </h4>
-        <li>  </li>
-        <li>  </li>
-        <li>  </li>
         
-        <h4>  </h4>
-        <li>  </li>
-        <li>  </li>
-        <li>  </li>
+        <h4> Window Location </h4>
+        <li> You can user the "window.location" command to get informtion about the 
+            URL as a string. </li>
+        
+        <br>    
+        <p> ---------------------- windowLocation-1 ---------------------------- </p>
+        <br>
+           
+        <h4>Network commands</h4>
+        <li> The protocol property returns a string describing the protocol used 
+            (such as http , https , pop2 , ftp etc.). Note that there is a colon 
+            ( : ) at the end: </li>
+        
+        <br>    
+        <p> ---------------------- protocolLocation-1 ---------------------------- </p>
+        <br>
+
+        <li> The host property returns a string describing the domain of the current 
+            URLandthe port number (this is often omitted if the default port 80 is 
+            used): </li>
+        
+        <br>    
+        <p> ---------------------- hostLocation-1 ---------------------------- </p>
+        <br>
+
+        <li> The hostname property returns a string describing the domain of the 
+            current URL: </li>
+
+        <br>    
+        <p> ---------------------- hostnameLocation-1 ---------------------------- </p>
+        <br>
+
+        <li> The port property returns a string describing the port number, although 
+            it will return an empty string if the port is not explicitly stated in 
+            the URL: </li>
+
+        <br>    
+        <p> ---------------------- portLocation-1 ---------------------------- </p>
+        <br>
+
+        <li> The pathname property returns a string of the path that follows the 
+            domain: </li>
+        
+        <br>    
+        <p> ---------------------- pathnameLocation-1 ---------------------------- </p>
+        <br>
+
+        <h4>Screen Information</h4>
+        <li> The window.screen object contains information about the screen the browser 
+            is displayed on. You can find out the height and width of the screen in 
+            pixels using the height and width properties respectively: </li>
+        <br>    
+        <p> ---------------------- screenInformation-1 ---------------------------- </p>
+        <br>
+            
+        <li> The availHeight and availWidth can be used to find the height and width of 
+            the screen, excluding any operating system menus: </li>
+        <br>    
+        <p> ---------------------- screenInformation-2 ---------------------------- </p>
+        <br>
+            
+
+
+
+        <h4> HTML5 APIs </h4>
+
+        <h4> </h4>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+
 
     </div>
 
@@ -52,8 +182,8 @@
 
 
     <h4>-------- Questions --------</h4>
-    <li>  </li>
-    <li>  </li>
+    <li> </li>
+    <li> </li>
 
     <p>------------------------------</p>
 
@@ -63,8 +193,8 @@
     <h4>Team Activity </h4>
     <h5>Please click the link below.</h5>
 
-    
-        <!-- <a href="/week8/teamActivity/starwarsPeople.html">Week 8 Team Activity</a> -->
+
+    <!-- <a href="/week8/teamActivity/starwarsPeople.html">Week 8 Team Activity</a> -->
 
     <p>------------------------------</p>
 
