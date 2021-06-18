@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="/week9/teamActivity/javascripts-drums/style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <h1>Click here to go back to Week 9 Notes...</h1>
+  <h1> <a href="/week9/index.html">Week 9 Notes</a> </h1>
+
+  <h2>Note: Right click and inspect.</h2>
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="/week9/teamActivity/sounds/clap.wav"></audio>
+  <audio data-key="83" src="/week9/teamActivity/sounds/hihat.wav"></audio>
+  <audio data-key="68" src="/week9/teamActivity/sounds/kick.wav"></audio>
+  <audio data-key="70" src="/week9/teamActivity/sounds/openhat.wav"></audio>
+  <audio data-key="71" src="/week9/teamActivity/sounds/boom.wav"></audio>
+  <audio data-key="72" src="/week9/teamActivity/sounds/ride.wav"></audio>
+  <audio data-key="74" src="/week9/teamActivity/sounds/snare.wav"></audio>
+  <audio data-key="75" src="/week9/teamActivity/sounds/tom.wav"></audio>
+  <audio data-key="76" src="/week9/teamActivity/sounds/tink.wav"></audio>
+  
+  <!-- <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="83" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio> -->
+
+<script>
+  let keySet = document.querySelectorAll(".key");
+  let udio = document.querySelector(`audio[data-key='65']`);
+  console.dir(udio);
+  
+  keySet.forEach(key => {
+    key.addEventListener("touchend", () => {
+      let audio = document.querySelector(`audio[data-key='${key.getAttribute("data-key")}']`);
+      key.className="key playing";
+      key.style.transform+="translateY(10px)";
+      audio.currentTime = "0";
+      audio.play();
+
+      if(key.style.transform.split(" ").length == 10) {
+        key.style.transform="";
+      }
+
+      setTimeout( () => {
+        key.className="key";
+      }, audio.duration * 1000 );
+  });
+});
+  
+</script>
+
+
+</body>
+</html>
