@@ -1,10 +1,9 @@
-import {
-    Todo
-} from './todo.js';
+import { Todo } from './todo.js';
 
 let status = "all";
 let button = document.querySelector('#add')
     .addEventListener('touchend', addTodo);
+
 let all = document.querySelector("#all");
 all.addEventListener('touchend', () => {
     status = 'all';
@@ -73,8 +72,8 @@ function addTodo() {
         localStorage.setItem("name", JSON.stringify(toDoList));
     };
 
-    // Make sure you alway add a print function to "Save" your changes
-    print();
+    
+    
 
 }
 
@@ -99,7 +98,6 @@ function print(filterForActive) {
             break;
             
         case true:
-            
             toDoList = toDoList.filter(toDoItem => !toDoItem.Completed);
             countType.innerText = status + ' tasks';
             console.log("activeTrue"+toDoList);
