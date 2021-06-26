@@ -15,61 +15,74 @@
 
 
     <header>
-        <h1> <u>Movies To Watch</u> </h1>
+        <h1 class="center"> Movies To Watch </h1>
     </header>
 
     <main>
-        <section id="menuButtons">
-            <table>
-                <tr>
-                    <td id=""> <button id="all"> All </button> </td>
-                    <td id=""> <button id="inTheater"> In Theater </button> </td>
-                    <td id=""> <button id="streamingService"> Streaming Service </button> </td>
-                    <td id=""> <button id="search"> Search </button> </td>
-                </tr>
-            </table>
+        <section id="menuButtons" class="center">
+            <button id="all"> All </button>
+            <button id="inTheater"> In Theater </button>
+            <button id="streamingService"> Streaming Service </button>
+            <button id="search"> Search </button>
+        
         </section>
 
-        <br>
-
-        <div>
+        <div class="margin-top">
             <button id="addNewMovieButton"> Add new Movie here</button>
 
         </div>
 
-        <br>
 
-        <div>
-            <span id="search"> <b> Search = </b> </span>
+        
+
+        <div id="streamingServiceInput" class="margin-top hidden">
+            <button> In Theater </button>
+            <button> Disney+ </button>
+            <button> Netflix </button>
+            <button> Prime Video </button>
+
+            <!--   ----Additional----   -->
+            <!-- <button> Hulu </button>
+            <button> HBO Max </button>
+            <button> Redbox </button> -->
+             
+        </div>
+
+
+
+
+        <div id="searchInput" class="margin-top hidden">
+            <span id="search"> Search = </span>
             <input type="text" id="myInput" placeholder="Title of movie...">
 
         </div>
 
-        <br>
-
-        <section id="addMovieLayout">
+        <section id="addMovieLayout" class="margin-top hidden">
 
             <b> Add a movie here = </b>
 
             <br>
 
-            <input type="text" id="movieTitleInput" placeholder="Movie Title...">
-            <span id="addMovieTitle"> Add Title </span>
+            <input type="text" id="movieTitleInput" value="Avengers: Age of Ultron" placeholder="Movie Title...">
+            
 
             <br>
 
-            <input type="text" id="movieRatingInput" placeholder="Movie Rating...">
-            <span id="addMovieRating"> Add Rating </span>
+            <input type="text" id="movieRatingInput" value="PG-13" placeholder="Movie Rating...">
+            
 
             <br>
 
-            <input type="text" id="avalibleAtInput" placeholder="Avalible at...">
-            <span id="addAvalibleAt">Add Avalible At </span>
+            <input type="text" id="avalibleAtInput" value="Disney+" placeholder="Avalible at...">
+            
 
             <br>
 
-            <input type="text" id="descriptionInput" placeholder="Description...">
-            <span id="addDescription">Add Description </span>
+            <input type="text" id="descriptionInput" value="Avengers Description" placeholder="Description...">
+           
+            <br>
+
+            <button id="submitButton"> Submit </button>
 
         </section>
 
@@ -87,9 +100,12 @@
             </table>
 
 
-            <table id="movieList">
-                <tbody></tbody>
-            </table>
+            <div id="movieList">
+               
+
+            </div>
+
+           
 
 
         </section>
