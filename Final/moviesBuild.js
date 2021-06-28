@@ -82,20 +82,25 @@ document.querySelector('#all').addEventListener('click', () => {
     document.querySelector("#searchInput").classList.add("hidden");
     document.querySelector('#addMovieLayout').classList.add("hidden");
     document.querySelector('#streamingServiceInput').classList.add("hidden");
+
+    loadMovies(); 
+
 });
 
 
 
 
 // ---- SUBMIT BUTTON -------------------------------------------------
-let submitButton = document.querySelector("#addSubmitButton");
+let submitButton = document.querySelector("#submitButton");
     submitButton.addEventListener('click', addMovie);
     submitButton.addEventListener('click', confirmSubmit);
 
 
 
 
-
+    
+    
+loadMovies();
 
 // print();
 
@@ -122,35 +127,73 @@ function addMovie() {
     let addAvalibleAt = document.querySelector('#avalibleAtInput');
     let addDescription = document.querySelector('#descriptionInput');
 
-    let newMoivie = new Movie(
-        addMovieTitle.value,
-        addMovieRating.value,
-        addAvalibleAt.value,
-        addDescription.value
-    );
+    if (addMovieTitle.value !== "" && addMovieRating.value !== "" && addAvalibleAt.value !== "") {
+        let newMoivie = new Movie(
+            addMovieTitle.value,
+            addMovieRating.value,
+            addAvalibleAt.value,
+            addDescription.value
+        );
 
-    //Reset the form (Clears out the movie form)
-    movieTitleInput.value = '';
-    movieRatingInput.value = '';
-    avalibleAtInput.value = '';
-    descriptionInput.value = '';
+        //Reset the form (Clears out the movie form)
+        movieTitleInput.value = '';
+        movieRatingInput.value = '';
+        avalibleAtInput.value = '';
+        descriptionInput.value = '';
 
-    let movieList = localStorage.getItem("update"); 
-    if (movieList == undefined) {
-        movieList = [];
-        movieList.push(newMoivie);
-        localStorage.setItem("update", JSON.stringify(movieList));
-    } 
+        let movieList = localStorage.getItem("update"); 
+        if (movieList == undefined) {
+            movieList = [];
+            movieList.push(newMoivie);
+            localStorage.setItem("update", JSON.stringify(movieList));
+        } 
+        else {
+            movieList = JSON.parse(movieList);
+            movieList.push(newMoivie);
+            localStorage.setItem("update", JSON.stringify(movieList));
+        };
+
+        let checkedSubmitButton = document.createElement("p")
+        checkedSubmitButton.style.color = "green"
+        checkedSubmitButton.textContent = "Movie has been added!"
+        
+        document.querySelector("#addMovieLayout").appendChild(checkedSubmitButton)
+        setTimeout(() => {
+            checkedSubmitButton.remove();
+        }, 5000 );
+    }
     else {
-        movieList = JSON.parse(movieList);
-        movieList.push(newMoivie);
-        localStorage.setItem("update", JSON.stringify(movieList));
-    };
-
-    // ---------- Add display function to show this ---------
+        let submitError = document.createElement("p")
+        submitError.style.color = "red"
+        submitError.textContent = "!!! Title, Rating, Avalible At fields are required. !!!"
+        
+        document.querySelector("#addMovieLayout").appendChild(submitError)
+        setTimeout(() => {
+            submitError.remove();
+        }, 10000 );
+    }
 
 }
 
 
+function loadMovies() {
+    let movieList = document.querySelector("#movieList")
+    movieList.innerHTML = ""
+    JSON.parse(localStorage.getItem("update")).map(movie => {
+        movieList.innerHTML+= 
+        `
+        <div class= "addBoarder" >
+            <h3> ${movie.Title} </h3>
+
+            <p> ${movie.Rating} </p>
+            
+            <p> ${movie.AvailableAt} </p>
+            
+            <p> ${movie.Description} </p>
+
+        </div>
+        `
+    })
+}
 
 

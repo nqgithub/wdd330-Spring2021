@@ -10,3 +10,7 @@
 .hidden {
     display: none;
 }
+
+.addBoarder {
+    border: black solid 1px;
+}
