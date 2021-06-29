@@ -186,7 +186,7 @@ function addMovie() {
 
 }
 
-
+ 
 function loadMovies(movieFilter) {
     let movieList = document.querySelector("#movieList")
     movieList.innerHTML = ""
@@ -198,7 +198,7 @@ function loadMovies(movieFilter) {
                         return movie.AvailableAt === movieFilter.searchQuery
                     }
                     else if (movieFilter.searchMode === "title") {
-                        return movie.Title.includes(movieFilter.searchQuery)
+                        return movie.Title.toLowerCase().includes(movieFilter.searchQuery.toLowerCase())
                     }
                 }
                 else {
