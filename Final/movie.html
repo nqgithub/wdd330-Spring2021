@@ -36,10 +36,9 @@
         
 
         <div id="streamingServiceInput" class="margin-top hidden">
-            <button> In Theater </button>
-            <button> Disney+ </button>
-            <button> Netflix </button>
-            <button> Prime Video </button>
+            <button id="disneyPlusButton"> Disney+ </button>
+            <button id="netflixButton"> Netflix </button>
+            <button id="primeVideoButton"> Prime Video </button>
 
             <!--   ----Additional----   -->
             <!-- <button> Hulu </button>
@@ -63,22 +62,40 @@
 
             <br>
 
-            <input type="text" id="movieTitleInput" value="Avengers: Age of Ultron" placeholder="Movie Title...">
+            <input type="text" id="movieTitleInput" class="addBoarder" value="Avengers: Age of Ultron" placeholder="Movie Title...">
             
 
             <br>
 
-            <input type="text" id="movieRatingInput" value="PG-13" placeholder="Movie Rating...">
+            <!-- <input type="text" id="movieRatingInput" value="PG-13" placeholder="Movie Rating..."> -->
             
+                <select id="ratingOptions">
+                    <option value="" selected disabled>Choose Rating</option>
+                    <option>PG-13</option>
+                    <option>PG</option>
+                    <option>G</option>
+                    <option>Other</option>
+                </select>
+           
 
             <br>
 
-            <input type="text" id="avalibleAtInput" value="Disney+" placeholder="Avalible at...">
+            <!-- <input type="text" id="avalibleAtInput" value="Disney+" placeholder="Avalible at..."> -->
             
+            
+                <select id="avalibleAtOptions">
+                    <option value="" selected disabled>Choose Avalibility</option>
+                    <option>In Theater</option>
+                    <option>Disney+</option>
+                    <option>Netflix</option>
+                    <option>Prime Video</option>
+                </select>
+        
+
 
             <br>
 
-            <input type="text" id="descriptionInput" value="Avengers Description" placeholder="Description...">
+            <input type="text" id="descriptionInput" class="addBoarder" value="Avengers Description" placeholder="Description...">
            
             <br>
 

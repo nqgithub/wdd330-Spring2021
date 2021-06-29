@@ -13,4 +13,5 @@
 
 .addBoarder {
     border: black solid 1px;
+    margin-bottom: 1em;
 }
