@@ -15,3 +15,26 @@
     border: black solid 1px;
     margin-bottom: 1em;
 }
+
+
+/* ------------------------------------------------ */
+
+#moviesToWatchCSS {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 1em;
+}
+
+
+
+
+/* ------------------------------------------------ */
+body {
+    color: orange;
+    font-family: ;
+    
+}
+
+button:hover {
+    box-shadow: 0 1em 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

@@ -72,6 +72,13 @@ document.querySelector('#streamingService').addEventListener('click', () => {
 
 
 
+// ---- In Theater BUTTON -------------------------------------------------
+document.querySelector('#inTheater').addEventListener('click', () => {
+    document.querySelector("#searchInput").classList.add("hidden");
+
+});
+
+
 // ---- ALL BUTTON -------------------------------------------------
 document.querySelector('#all').addEventListener('click', () => {
     document.querySelector('#displayMovieTable').classList.remove("hidden");
@@ -266,7 +273,7 @@ function loadMovies(movieFilter) {
                 })
         }
         else {
-            movieList.innerHTML = "<p>No movies found</p>"
+            movieList.innerHTML = "<p>No movies found.</p>"
         }
     }
 }
