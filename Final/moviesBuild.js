@@ -1,5 +1,7 @@
 //Import how to create a "movie"
-import { Movie } from './movie.js';
+import {
+    Movie
+} from './movie.js';
 
 //Default status to "all"
 let status = "all";
@@ -15,21 +17,24 @@ let status = "all";
 let all = document.querySelector("#all");
 all.addEventListener('click', () => {
     status = 'all';
-    
+
 });
 
 //Describing what the inTheater button does
 let inTheater = document.querySelector("#inTheater");
 inTheater.addEventListener('click', () => {
     status = 'inTheater';
-    loadMovies({'searchMode': 'service', 'searchQuery': 'In Theater'})
+    loadMovies({
+        'searchMode': 'service',
+        'searchQuery': 'In Theater'
+    })
 });
 
 //Describing what the streamingService button does
 let streamingService = document.querySelector("#streamingService");
 streamingService.addEventListener("click", () => {
     status = 'streamingService';
-    
+
 });
 
 
@@ -86,7 +91,7 @@ document.querySelector('#all').addEventListener('click', () => {
     document.querySelector('#addMovieLayout').classList.add("hidden");
     document.querySelector('#streamingServiceInput').classList.add("hidden");
 
-    loadMovies(); 
+    loadMovies();
 
 });
 
@@ -95,29 +100,41 @@ document.querySelector('#all').addEventListener('click', () => {
 
 // ---- SUBMIT BUTTON -------------------------------------------------
 let submitButton = document.querySelector("#submitButton");
-    submitButton.addEventListener('click', addMovie);
-    submitButton.addEventListener('click', confirmSubmit);
+submitButton.addEventListener('click', addMovie);
+submitButton.addEventListener('click', confirmSubmit);
 
 
 
 // ---- FILTER BUTTONS -------------------------------------------------
 document.querySelector('#disneyPlusButton').addEventListener('click', () => {
-    loadMovies({'searchMode': 'service', 'searchQuery': 'Disney+'})
+    loadMovies({
+        'searchMode': 'service',
+        'searchQuery': 'Disney+'
+    })
 })
 document.querySelector('#netflixButton').addEventListener('click', () => {
-    loadMovies({'searchMode': 'service', 'searchQuery': 'Netflix'})
+    loadMovies({
+        'searchMode': 'service',
+        'searchQuery': 'Netflix'
+    })
 })
 document.querySelector('#primeVideoButton').addEventListener('click', () => {
-    loadMovies({'searchMode': 'service', 'searchQuery': 'Prime Video'})
+    loadMovies({
+        'searchMode': 'service',
+        'searchQuery': 'Prime Video'
+    })
 })
 
 
 // ---- SEARCH FILTER -------------------------------------------------
 document.querySelector('#myInput').addEventListener('input', (e) => {
-    loadMovies({'searchMode': 'title', 'searchQuery': e.target.value})
+    loadMovies({
+        'searchMode': 'title',
+        'searchQuery': e.target.value
+    })
 })
 
-    
+
 loadMovies();
 
 // print();
@@ -159,13 +176,12 @@ function addMovie() {
         addAvalibleAt.value = '';
         addDescription.value = '';
 
-        let movieList = localStorage.getItem("update"); 
+        let movieList = localStorage.getItem("update");
         if (movieList == undefined) {
             movieList = [];
             movieList.push(newMoivie);
             localStorage.setItem("update", JSON.stringify(movieList));
-        } 
-        else {
+        } else {
             movieList = JSON.parse(movieList);
             movieList.push(newMoivie);
             localStorage.setItem("update", JSON.stringify(movieList));
@@ -174,26 +190,25 @@ function addMovie() {
         let checkedSubmitButton = document.createElement("p")
         checkedSubmitButton.style.color = "green"
         checkedSubmitButton.textContent = "Movie has been added!"
-        
+
         document.querySelector("#addMovieLayout").appendChild(checkedSubmitButton)
         setTimeout(() => {
             checkedSubmitButton.remove();
-        }, 5000 );
-    }
-    else {
+        }, 5000);
+    } else {
         let submitError = document.createElement("p")
         submitError.style.color = "red"
         submitError.textContent = "!!! Title, Rating, Avalible At fields are required. !!!"
-        
+
         document.querySelector("#addMovieLayout").appendChild(submitError)
         setTimeout(() => {
             submitError.remove();
-        }, 10000 );
+        }, 10000);
     }
 
 }
 
- 
+
 function loadMovies(movieFilter) {
     let movieList = document.querySelector("#movieList")
     movieList.innerHTML = ""
@@ -203,19 +218,17 @@ function loadMovies(movieFilter) {
                 if (movieFilter) {
                     if (movieFilter.searchMode === "service") {
                         return movie.AvailableAt === movieFilter.searchQuery
-                    }
-                    else if (movieFilter.searchMode === "title") {
+                    } else if (movieFilter.searchMode === "title") {
                         return movie.Title.toLowerCase().includes(movieFilter.searchQuery.toLowerCase())
                     }
-                }
-                else {
+                } else {
                     return true
                 }
             })
-        
+
         if (movies.length > 0) {
             movies.map(movie => {
-                movieList.innerHTML+= 
+                /* movieList.innerHTML+= 
                     `
                     <div class="addBoarder" id="movieContainer${movie.Id}">
                         <h3> ${movie.Title} </h3>
@@ -231,48 +244,72 @@ function loadMovies(movieFilter) {
                             <button id="delete${movie.Id}"> Delete </button>
                         </div>
 
-                    </div>
-                    `
+                    </div>` */
 
-                    document.querySelector(`#delete${movie.Id}`).addEventListener('click', () => {
-                        deleteMovie(movie.Id)
-                    })
-                    document.querySelector(`#update${movie.Id}`).addEventListener('click', () => {
-                        const container = document.querySelector(`#movieContainer${movie.Id}`)
-                        container.innerHTML = `
-                            <input type="text" id="updateMovieTitleInput" class="addBoarder" value="${movie.Title}" placeholder="Movie Title..."><br>
-                            <select id="updateRatingOptions">
-                                <option value="" disabled>Choose Rating</option>
-                                <option ${(movie.Rating === "PG-13" ? "selected" : "")}>PG-13</option>
-                                <option ${(movie.Rating === "PG" ? "selected" : "")}>PG</option>
-                                <option ${(movie.Rating === "G" ? "selected" : "")}>G</option>
-                                <option ${(movie.Rating === "Other" ? "selected" : "")}>Other</option>
-                            </select><br>
-                            <select id="updateAvalibleAtOptions">
-                                <option value="" disabled>Choose Avalibility</option>
-                                <option ${(movie.AvailableAt === "In Theater" ? "selected" : "")}>In Theater</option>
-                                <option ${(movie.AvailableAt === "Disney+" ? "selected" : "")}>Disney+</option>
-                                <option ${(movie.AvailableAt === "Netflix" ? "selected" : "")}>Netflix</option>
-                                <option ${(movie.AvailableAt === "Prime Video" ? "selected" : "")}>Prime Video</option>
-                            </select><br>
-                            <input type="text" id="updateDescriptionInput" class="addBoarder" value="${movie.Description}" placeholder="Description..."><br>
-                            <button id="save${movie.Id}"> Save Movie </button>
-                            `
-                        document.querySelector(`#save${movie.Id}`).addEventListener('click', () => {
-                            const updatedMovie = new Movie(
-                                document.querySelector('#updateMovieTitleInput').value,
-                                document.querySelector('#updateRatingOptions').value,
-                                document.querySelector('#updateAvalibleAtOptions').value,
-                                document.querySelector('#updateDescriptionInput').value,
-                                movie.Id
-                            )
+                let container = document.createElement('div')
+                container.className = "addBoarder"
+                container.id = "movieContainer" + movie.Id
+                let title = document.createElement('h3')
+                title.textContent = movie.Title
+                let rating = document.createElement('p')
+                rating.textContent = movie.Rating
+                let availableAt = document.createElement('p')
+                availableAt.innerHTML = `<b>Available at:</b> ${movie.AvailableAt}`
+                let description = document.createElement('p')
+                description.innerHTML = `<b>Description:</b> ${movie.description}`
+                let div = document.createElement('div')
+                let updateButton = document.createElement('button')
+                updateButton.textContent = "Update"
+                let deleteButton = document.createElement('button')
+                deleteButton.textContent = "Delete"
 
-                            saveUpdatedChanges(movie.Id, updatedMovie, movieFilter);
-                        })
+                container.appendChild(title)
+                container.appendChild(rating)
+                container.appendChild(availableAt)
+                container.appendChild(description)
+                div.appendChild(updateButton)
+                div.appendChild(deleteButton)
+                container.appendChild(div)
+                movieList.appendChild(container)
+
+                deleteButton.addEventListener('click', () => {
+                    deleteMovie(movie.Id)
+                })
+                updateButton.addEventListener('click', () => {
+                    const container = document.querySelector(`#movieContainer${movie.Id}`)
+                    container.innerHTML = `
+                        <input type="text" id="updateMovieTitleInput" class="addBoarder" value="${movie.Title}" placeholder="Movie Title..."><br>
+                        <select id="updateRatingOptions">
+                            <option value="" disabled>Choose Rating</option>
+                            <option ${(movie.Rating === "PG-13" ? "selected" : "")}>PG-13</option>
+                            <option ${(movie.Rating === "PG" ? "selected" : "")}>PG</option>
+                            <option ${(movie.Rating === "G" ? "selected" : "")}>G</option>
+                            <option ${(movie.Rating === "Other" ? "selected" : "")}>Other</option>
+                        </select><br>
+                        <select id="updateAvalibleAtOptions">
+                            <option value="" disabled>Choose Avalibility</option>
+                            <option ${(movie.AvailableAt === "In Theater" ? "selected" : "")}>In Theater</option>
+                            <option ${(movie.AvailableAt === "Disney+" ? "selected" : "")}>Disney+</option>
+                            <option ${(movie.AvailableAt === "Netflix" ? "selected" : "")}>Netflix</option>
+                            <option ${(movie.AvailableAt === "Prime Video" ? "selected" : "")}>Prime Video</option>
+                        </select><br>
+                        <input type="text" id="updateDescriptionInput" class="addBoarder" value="${movie.Description}" placeholder="Description..."><br>
+                        <button id="save${movie.Id}"> Save Movie </button>
+                        `
+                    document.querySelector(`#save${movie.Id}`).addEventListener('click', () => {
+                        const updatedMovie = new Movie(
+                            document.querySelector('#updateMovieTitleInput').value,
+                            document.querySelector('#updateRatingOptions').value,
+                            document.querySelector('#updateAvalibleAtOptions').value,
+                            document.querySelector('#updateDescriptionInput').value,
+                            movie.Id
+                        )
+
+                        saveUpdatedChanges(movie.Id, updatedMovie, movieFilter);
                     })
                 })
-        }
-        else {
+            })
+        } else {
             movieList.innerHTML = "<p>No movies found.</p>"
         }
     }
@@ -289,11 +326,9 @@ function deleteMovie(movieId) {
 function saveUpdatedChanges(movieId, updatedMovie, movieFilter) {
     const updatedMovieList = JSON.parse(localStorage.getItem("update"));
     const indexToUpdate = updatedMovieList.findIndex((movie) => movie.Id === movieId)
-    
+
     updatedMovieList[indexToUpdate] = updatedMovie;
 
     localStorage.setItem("update", JSON.stringify(updatedMovieList));
     loadMovies(movieFilter)
 }
-
-
