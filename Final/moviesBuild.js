@@ -256,7 +256,7 @@ function loadMovies(movieFilter) {
                 let availableAt = document.createElement('p')
                 availableAt.innerHTML = `<b>Available at:</b> ${movie.AvailableAt}`
                 let description = document.createElement('p')
-                description.innerHTML = `<b>Description:</b> ${movie.description}`
+                description.innerHTML = `<b>Description:</b> ${movie.Description}`
                 let div = document.createElement('div')
                 let updateButton = document.createElement('button')
                 updateButton.textContent = "Update"
